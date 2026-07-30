@@ -9,6 +9,7 @@ process.on("exit", () => {
 
 const nextConfig = {
   output: "export" as const,
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
