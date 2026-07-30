@@ -1,0 +1,37 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "Collections", description: "Explore customized destiny bracelets, personalized watches and laser engraving gifts by Code9." };
+
+const products = [
+  { id:"bracelet", num:"01", title:"Customized Destiny Bracelet", italic:"Intention, worn beautifully.", desc:"A personal composition of natural stones, colours and details inspired by your Digital Numerology profile.", bullets:["Natural stone selection","Personal colour guidance","Size and style customization","Premium gift presentation"], art:"bracelet" },
+  { id:"watch", num:"02", title:"Personalized Destiny Watch", italic:"Your time. Your story.", desc:"A refined timepiece made more meaningful through subtle, personal details connected to your unique numerical blueprint.", bullets:["Selected watch styles","Lucky number integration","Personal engraving","Signature gift packaging"], art:"watch" },
+  { id:"engraving", num:"03", title:"Laser Engraving Gifts & Services", italic:"Make the moment unmistakably theirs.", desc:"Precise, premium personalization for individual keepsakes, celebrations and thoughtful corporate gifting.", bullets:["Names, dates and messages","Logos and approved artwork","Personal and corporate orders","Quotation for bulk quantities"], art:"gift" },
+];
+
+export default function Products() {
+  return (
+    <>
+      <section className="page-hero product-page-hero">
+        <p className="eyebrow">The Code9 collections</p>
+        <h1>Created for one.<br /><em>Remembered always.</em></h1>
+        <p>Personal pieces and gifts shaped by intention, finished with care and designed to carry a story.</p>
+      </section>
+      <section className="product-intro section"><div className="section-label">Three signature expressions</div><p>Whether guided by your numbers or personalized for someone meaningful, every Code9 creation begins with a simple idea: the most treasured things feel truly personal.</p></section>
+      {products.map((product, i) => (
+        <section className={`product-detail section ${i % 2 ? "reverse" : ""}`} id={product.id} key={product.id}>
+          <div className={`detail-art ${product.art}`}><span>{product.num}</span><div className="product-object" /></div>
+          <div className="detail-copy">
+            <div className="section-label">{product.num} / Signature Collection</div>
+            <h2>{product.title}</h2>
+            <h3>{product.italic}</h3>
+            <p>{product.desc}</p>
+            <ul>{product.bullets.map(b => <li key={b}><span>✦</span>{b}</li>)}</ul>
+            <Link className="button button-primary" href={`/contact?interest=${product.id}`}>{product.id === "engraving" ? "Request a quotation" : "Enquire about this piece"} <span>↗</span></Link>
+          </div>
+        </section>
+      ))}
+      <section className="center-cta section"><p className="eyebrow">Made for your story</p><h2>Let’s create something<br /><em>meaningful.</em></h2><Link className="button button-primary" href="/contact">Start an enquiry <span>→</span></Link></section>
+    </>
+  );
+}
