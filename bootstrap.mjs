@@ -1,4 +1,5 @@
-import { mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { mkdirSync, writeFileSync, rmSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { dirname } from "node:path";
 
 for (const legacy of ["layout.tsx","page.tsx","page (1).tsx","page (3).tsx","site-chrome.tsx"]) {
@@ -12,9 +13,10 @@ for (const [path, encoded] of Object.entries(files)) {
 }
 
 const imageNames = ["code9-logo.png","heart9-pastel.png","heart9-soft.png","heart9-transparent.png","og.png"];
-await Promise.all(imageNames.map(async (name) => {
-  const response = await fetch("https://code9-website-9yt95drnt-yuky1.vercel.app" + "/" + name);
-  if (!response.ok) throw new Error("Unable to retrieve " + name + ": " + response.status);
+for (const name of imageNames) {
   mkdirSync("public", { recursive: true });
-  writeFileSync("public/" + name, Buffer.from(await response.arrayBuffer()));
-}));
+  const destination = "public/" + name;
+  if (!existsSync(destination)) {
+    execFileSync("curl", ["-fsSL", "https://code9-website-9yt95drnt-yuky1.vercel.app" + "/" + name, "-o", destination]);
+  }
+}
