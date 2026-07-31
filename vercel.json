@@ -1,0 +1,3 @@
+{
+  "buildCommand": "node bootstrap.mjs && next build"
+}
