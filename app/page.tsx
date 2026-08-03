@@ -67,7 +67,7 @@ export default function Home() {
           <div className="gem gem-one" />
           <div className="gem gem-two" />
           <div className="gem gem-three" />
-          <div className="heart-nine-mark"><img src="https://code9-destiny.yukytay.chatgpt.site/heart9-pastel.png" alt="DeCode9 Heart 9 symbol" /></div>
+          <div className="heart-nine-mark"><img src="/heart9-pastel.png" alt="DeCode9 Heart 9 symbol" /></div>
           <div className="hero-lockup"><strong>DeCode<span>9</span></strong><small>Decode Your Destiny</small></div>
           <div className="hero-star star-one">✦</div><div className="hero-star star-two">✧</div><div className="hero-star star-three">·</div>
         </div>
