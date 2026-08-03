@@ -1,0 +1,43 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { headers } from "next/headers";
+import "./globals.css";
+import { SiteChrome } from "./site-chrome";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const incoming = await headers();
+  const host = incoming.get("x-forwarded-host") ?? incoming.get("host") ?? "localhost:3000";
+  const protocol = incoming.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
+  const origin = `${protocol}://${host}`;
+  const title = "DeCode9 | Decode Your Destiny";
+  const description = "Personalized Numerology consultations, customized destiny bracelets, personalized watches and laser engraved gifts.";
+  return {
+    metadataBase: new URL(origin),
+    title: { default: title, template: "%s | DeCode9" },
+    description,
+    icons: { icon: "/code9-logo.png", shortcut: "/code9-logo.png" },
+    openGraph: { title, description, type: "website", url: origin, images: [{ url: "https://code9-destiny.yukytay.chatgpt.site/og.png", width: 655, height: 495, alt: "DeCode9 — Decode Your Destiny" }] },
+    twitter: { card: "summary_large_image", title, description, images: ["https://code9-destiny.yukytay.chatgpt.site/og.png"] },
+  };
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en">
+      <body>
+        <SiteChrome>
+          <main>{children}</main>
+          <footer>
+            <div className="footer-top">
+              <Link href="/" className="brand footer-brand"><img className="brand-logo footer-logo" src="/code9-logo.png" alt="DeCode9 — Decode Your Destiny" /></Link>
+              <div><h4>Explore</h4><Link href="/about">Our Story</Link><Link href="/services">Consultation</Link><Link href="/products">Collections</Link><Link href="/contact">Contact</Link></div>
+              <div><h4>Collections</h4><Link href="/products#bracelet">Destiny Bracelet</Link><Link href="/products#watch">Destiny Watch</Link><Link href="/products#engraving">Engraved Gifts</Link></div>
+              <div><h4>Connect</h4><a href="mailto:hello@code9.sg">hello@code9.sg</a><span>Instagram · Facebook</span><span>Mon–Sat · 10am–7pm</span></div>
+            </div>
+            <div className="footer-bottom"><span>© 2026 DeCode9. All rights reserved.</span><span>Singapore · Crafted with intention</span></div>
+          </footer>
+        </SiteChrome>
+      </body>
+    </html>
+  );
+}

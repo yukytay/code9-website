@@ -1,0 +1,43 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "Digital Numerology Consultation", description: "Explore your personal numerical blueprint with a private Code9 consultation." };
+
+export default function Services() {
+  const themes = ["Personal blueprint", "Career & business", "Wealth potential", "Relationships", "Well-being", "Lucky numbers", "Supportive colours", "Auspicious dates"];
+  return (
+    <>
+      <section className="page-hero service-hero">
+        <p className="eyebrow">Digital Numerology Consultation</p>
+        <h1>Clarity for the path<br /><em>ahead.</em></h1>
+        <p>A private, thoughtful consultation designed to help you better understand your natural patterns, strengths and possibilities.</p>
+        <Link className="button button-primary" href="/contact">Book your consultation <span>↗</span></Link>
+      </section>
+      <section className="service-overview section">
+        <div>
+          <div className="section-label">01 / Your Consultation</div>
+          <h2>A conversation<br />centred on <em>you.</em></h2>
+        </div>
+        <div>
+          <p className="lead">Your birth details hold a personal numerical pattern. Together, we explore what that pattern may illuminate.</p>
+          <p>The experience is calm, confidential and easy to understand. You leave with practical reflections, supportive directions and—if desired—recommendations for a personalized Code9 creation.</p>
+        </div>
+      </section>
+      <section className="theme-grid section">
+        {themes.map((theme, i) => <div className="theme" key={theme}><span>{String(i+1).padStart(2,"0")}</span><h3>{theme}</h3></div>)}
+      </section>
+      <section className="consultation-flow section">
+        <div className="section-label light">02 / What To Expect</div>
+        <h2>Simple, personal,<br /><em>considered.</em></h2>
+        <div className="flow-grid">
+          {[
+            ["Before", "Share your birth date, preferred contact details and the areas of life you would like to explore."],
+            ["During", "Your consultant guides you through your personal profile in clear, grounded language with space for questions."],
+            ["After", "Receive your key insights and, where relevant, tailored colour, number and product recommendations."],
+          ].map(([t,d],i) => <div key={t}><b>0{i+1}</b><h3>{t}</h3><p>{d}</p></div>)}
+        </div>
+      </section>
+      <section className="center-cta section"><p className="eyebrow">Begin with understanding</p><h2>Your next chapter<br />starts with <em>one conversation.</em></h2><Link className="button button-primary" href="/contact">Reserve a consultation <span>→</span></Link></section>
+    </>
+  );
+}
