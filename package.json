@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node bootstrap.mjs && next build",
+    "build": "node bootstrap.mjs && node patch-home.mjs && next build",
     "start": "next start",
     "lint": "eslint ."
   },
