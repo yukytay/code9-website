@@ -30,7 +30,7 @@ h1 em,h2 em { color:var(--pink); font-weight:400; }
 header { position:fixed; z-index:50; top:0; width:100%; height:96px; padding:0 max(4vw,24px); display:flex; align-items:center; justify-content:space-between; color:var(--ink); background:rgba(255,255,255,.94); backdrop-filter:blur(20px); box-shadow:0 1px 0 var(--line); transition:.35s; }
 header.scrolled,header.inner-header { background:rgba(255,255,255,.97); color:var(--ink); box-shadow:0 1px 0 var(--line); }
 .header-brand { display:flex; align-items:center; gap:4px; }
-.header-petals-mark { position:relative;width:62px;height:62px;overflow:hidden;flex:0 0 62px;background:white; }
+.header-petals-mark { position:relative;width:62px;height:62px;overflow:hidden;flex:0 0 62px;background:transparent; }
 .header-petals-mark img { width:100%;height:100%;object-fit:contain; }
 .header-brand .header-wordmark { font:700 36px/.9 Georgia,serif; letter-spacing:-.04em; color:#461657; text-shadow:0 1px 0 rgba(255,255,255,.8); white-space:nowrap; }
 .header-brand b { font:inherit; }
@@ -188,7 +188,12 @@ blockquote { margin:20px auto;max-width:850px;font:clamp(28px,3vw,45px)/1.4 Geor
 .final-cta .eyebrow { color:var(--jade);font-size:13px; }
 footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .footer-top { display:grid;grid-template-columns:2fr repeat(3,1fr);gap:50px; }
-.footer-brand { align-self:start; }
+.footer-brand { align-self:start;align-items:center;gap:14px; }
+.footer-mark { width:94px;height:94px;object-fit:contain;filter:drop-shadow(0 8px 22px rgba(226,111,196,.18)); }
+.footer-wordmark { display:flex;flex-direction:column;align-items:flex-start; }
+.footer-wordmark strong { color:white;font:38px/.95 Georgia,serif;font-weight:600;letter-spacing:-.03em; }
+.footer-wordmark strong span { color:#ed8bca; }
+.footer-wordmark small { margin-top:9px;color:#99d1c1;font-size:9px;font-weight:700;letter-spacing:.19em;text-transform:uppercase; }
 .footer-top h4 { color:#8dc9b7;text-transform:uppercase;letter-spacing:.18em;font-size:9px;margin:0 0 20px; }
 .footer-top div:not(:first-child) { display:flex;flex-direction:column;gap:10px;font-size:12px;color:rgba(255,255,255,.58); }
 .footer-bottom { border-top:1px solid rgba(255,255,255,.1);margin-top:55px;padding-top:20px;display:flex;justify-content:space-between;color:rgba(255,255,255,.35);font-size:9px;letter-spacing:.1em;text-transform:uppercase; }
@@ -330,7 +335,7 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
   .philosophy-grid,.story-grid,.service-overview,.home-engraving-feature,.faq,.split-feature,.product-detail,.numerology-bridge,.engraving-intro,.contact-section{grid-template-columns:1fr;gap:50px}
   .section-head,.process-intro{display:block}.section-head>p,.process-intro>p{width:auto;margin-top:25px}
   .collection-grid{grid-template-columns:1fr}.product-art{min-height:320px}.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}
-  .footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-logo{width:180px;height:auto}
+  .footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-mark{width:78px;height:78px}.footer-wordmark strong{font-size:34px}
   .values,.theme-grid{grid-template-columns:1fr 1fr}.value{padding:50px 25px}.split-art{min-height:430px}.engraving-steps{grid-template-columns:repeat(2,1fr)}
   .product-detail.reverse .detail-art{order:0}.detail-art{min-height:450px}.product-intro{display:block}.product-intro p{font-size:21px}.ring-collection-head{display:block}.ring-collection-head>p{margin-top:25px}.pendant-collection-head{display:block}.pendant-collection-head>p{margin-top:25px}.ring-grid{grid-template-columns:1fr}.collection-contact{align-items:flex-start;flex-direction:column}
 }

@@ -29,7 +29,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <main>{children}</main>
           <footer>
             <div className="footer-top">
-              <Link href="/" className="brand footer-brand"><img className="brand-logo footer-logo" src="/petals-logo-transparent.png" alt="DeCode9 — Decode Your Destiny" /></Link>
+              <Link href="/" className="brand footer-brand" aria-label="DeCode9 home">
+                <img className="footer-mark" src="/heart9-transparent.png" alt="" />
+                <span className="footer-wordmark"><strong>DeCode<span>9</span></strong><small>Decode Your Destiny</small></span>
+              </Link>
               <div><h4>Explore</h4><Link href="/about">Our Story</Link><Link href="/services">Consultation</Link><Link href="/products">Jewellery</Link><Link href="/engraving">Engraved Gifts</Link><Link href="/contact">Contact</Link></div>
               <div><h4>Collections</h4><Link href="/products#bracelet">Destiny Bracelet</Link><Link href="/products#watch">Destiny Watch</Link><Link href="/products#silver-bamboo-blessing-ring">Blessing Rings</Link><Link href="/products#fortune-bamboo-pendant">Blessing Pendants</Link></div>
               <div><h4>Connect</h4><a href="mailto:info.decode9@gmail.com">info.decode9@gmail.com</a><a href="https://wa.me/6588651341?text=Hello%20DeCode9%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noreferrer">WhatsApp · +65 8865 1341</a><span>Instagram · Facebook</span><span>Mon–Sat · 10am–7pm</span></div>
