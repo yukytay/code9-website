@@ -30,13 +30,14 @@ h1 em,h2 em { color:var(--pink); font-weight:400; }
 header { position:fixed; z-index:50; top:0; width:100%; height:96px; padding:0 max(4vw,24px); display:flex; align-items:center; justify-content:space-between; color:var(--ink); background:rgba(255,255,255,.94); backdrop-filter:blur(20px); box-shadow:0 1px 0 var(--line); transition:.35s; }
 header.scrolled,header.inner-header { background:rgba(255,255,255,.97); color:var(--ink); box-shadow:0 1px 0 var(--line); }
 .header-brand { display:flex; align-items:center; gap:4px; }
-.header-brand img { width:62px; height:62px; object-fit:contain; }
-.header-brand span { font:700 36px/.9 Georgia,serif; letter-spacing:-.04em; color:#461657; text-shadow:0 1px 0 rgba(255,255,255,.8); white-space:nowrap; }
+.header-petals-mark { position:relative;width:62px;height:62px;overflow:hidden;flex:0 0 62px;background:white; }
+.header-petals-mark img { width:100%;height:100%;object-fit:contain; }
+.header-brand .header-wordmark { font:700 36px/.9 Georgia,serif; letter-spacing:-.04em; color:#461657; text-shadow:0 1px 0 rgba(255,255,255,.8); white-space:nowrap; }
 .header-brand b { font:inherit; }
 .header-brand i { color:var(--pink); font-style:normal; }
 .brand { display:flex; align-items:center; gap:8px; }
 .brand-logo { display:block; width:118px; height:82px; object-fit:contain; }
-.footer-logo { width:190px; height:auto; padding:8px; background:white; }
+.footer-logo { width:220px;height:auto;padding:0;background:transparent;filter:drop-shadow(0 8px 22px rgba(0,0,0,.18)); }
 nav { display:flex; align-items:center; gap:34px; }
 nav>a:not(.nav-cta) { font-size:10px; text-transform:uppercase; letter-spacing:.14em; opacity:.76; position:relative; }
 nav>a.active,nav>a:hover { opacity:1; }
@@ -114,11 +115,14 @@ nav>a.active:after { content:""; position:absolute; width:4px; height:4px; borde
 .section-head { display:flex; justify-content:space-between; align-items:end; margin-bottom:60px; }
 .section-head h2 { font-size:clamp(50px,5vw,76px); margin:0; }
 .section-head>p { color:rgba(255,255,255,.58); max-width:390px; }
-.collection-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.collection-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
 .collection-card { background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.1); transition:.35s; }
 .collection-card:hover { transform:translateY(-8px); background:rgba(255,255,255,.08); }
 .product-art,.detail-art { min-height:370px; position:relative; overflow:hidden; background:radial-gradient(circle,#945283 0%,#5c2869 45%,#28122f 100%); }
 .product-number { position:absolute; top:25px; left:25px; font:13px Georgia,serif; opacity:.65; }
+.collection-product-image { width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .6s ease; }
+.collection-card:hover .collection-product-image { transform:scale(1.035); }
+.product-art:has(.collection-product-image) .product-number { z-index:2;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(42,20,48,.78);opacity:1; }
 .product-object { position:absolute; inset:0; margin:auto; }
 .bracelet .product-object { width:190px;height:190px;border:25px dotted #c991b6;border-radius:50%;filter:drop-shadow(0 16px 12px #1f0b27);transform:rotate(-18deg); }
 .watch .product-object { width:130px;height:180px;border:10px solid #b980a9;border-radius:24px;background:radial-gradient(circle,#813a75,#28112f);box-shadow:0 -100px 0 -45px #b980a9,0 100px 0 -45px #b980a9,0 20px 30px #1b081f; }
@@ -129,6 +133,16 @@ nav>a.active:after { content:""; position:absolute; width:4px; height:4px; borde
 .collection-info h3 { font:25px/1.2 Georgia,serif; max-width:240px; }
 .collection-info p { font-size:13px;color:rgba(255,255,255,.55);max-width:300px; }
 .circle-arrow { position:absolute;right:25px;bottom:25px;width:40px;height:40px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:grid;place-items:center; }
+.home-engraving-feature { display:grid;grid-template-columns:1fr .9fr;gap:9vw;align-items:center;background:#f7f2ee; }
+.home-engraving-copy h2 { margin:22px 0;font-size:clamp(48px,5vw,76px); }
+.home-engraving-copy h2 em { color:var(--pink); }
+.home-engraving-copy>p:not(.home-engraving-note) { max-width:630px;color:#756d74; }
+.home-engraving-note { display:inline-block;margin:20px 0 0;padding:8px 12px;background:#e9dfd8;color:var(--purple);font-size:10px;text-transform:uppercase;letter-spacing:.12em; }
+.home-engraving-copy .button { margin-top:26px; }
+.home-engraving-occasions { min-height:480px;padding:58px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#29132f,#542858);color:white;box-shadow:0 28px 65px rgba(39,18,44,.15); }
+.home-engraving-occasions>span { padding:21px 0;border-bottom:1px solid rgba(255,255,255,.14);font:clamp(31px,3.6vw,53px)/1 Georgia,serif; }
+.home-engraving-occasions>span:nth-child(2) { color:#e9afd1; }
+.home-engraving-occasions small { margin-top:30px;color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.13em;text-transform:uppercase; }
 .process-intro { display:flex; justify-content:space-between; align-items:end; }
 .process-intro h2 { font-size:clamp(50px,5vw,76px); }
 .process-intro>p { width:390px; color:#79717a; }
@@ -138,18 +152,6 @@ nav>a.active:after { content:""; position:absolute; width:4px; height:4px; borde
 .step span { color:var(--pink);font:14px Georgia,serif; }
 .step h3 { font:29px Georgia,serif;margin:22px 0 10px; }
 .step p { color:#7d747c;font-size:13px;max-width:210px; }
-.destiny { background:linear-gradient(135deg,#54205f,#762d70); color:white; display:grid;grid-template-columns:1fr 1fr;gap:12vw;align-items:center; }
-.destiny h2 { color:white; }
-.destiny h2 em { color:#f09aca; }
-.destiny .section-label { color:#8bd0bb; }
-.destiny-copy h2 { font-size:clamp(50px,5vw,76px); }
-.destiny-copy p { color:rgba(255,255,255,.72);max-width:500px; }
-.destiny-copy .zh-copy { color:#d9c8df; }
-.destiny-form { background:rgba(255,255,255,.1);padding:48px;border:1px solid rgba(255,255,255,.24);box-shadow:none; }
-.destiny-form label { color:white;font-size:13px;letter-spacing:.14em; }
-.destiny-form input { color:white;border-bottom-color:rgba(255,255,255,.48); }
-.destiny-form input::placeholder { color:#e5cfe3;opacity:.9; }
-.destiny-form input[type="date"]::-webkit-calendar-picker-indicator { filter:invert(1);opacity:.85; }
 label { display:block;font-size:11px;font-weight:700;letter-spacing:.18em;margin-bottom:25px;color:#fff; }
 label small { float:right;opacity:.5; }
 input,select,textarea { display:block;width:100%;border:0;border-bottom:1px solid rgba(255,255,255,.48);background:transparent;color:inherit;padding:13px 0;outline:none;font-size:16px;font-weight:600;letter-spacing:normal; }
@@ -157,9 +159,6 @@ input::placeholder,textarea::placeholder { color:#e5cfe3;opacity:.9; }
 input[type="date"]::-webkit-calendar-picker-indicator { filter:invert(1);opacity:.85; }
 input:focus,select:focus,textarea:focus { border-color:#e6a0c7; }
 .form-row { display:grid;grid-template-columns:1fr 1fr;gap:25px; }
-.birth-time-tick { display:flex;align-items:center;gap:12px;align-self:end;min-height:42px;font-size:15px;letter-spacing:.04em;line-height:1.4;cursor:pointer;color:white; }
-.birth-time-tick input { flex:0 0 auto;width:17px;height:17px;margin:0;accent-color:#e6a0c7; }
-.destiny-form .button { font-size:13px;letter-spacing:.14em; }
 .privacy-note { display:block; font-size:11px;color:rgba(255,255,255,.78);text-align:center;margin-top:15px;line-height:1.5; }
 .form-success { text-align:center;padding:50px 10px; }
 .form-success span { font-size:35px;color:#9ad5c4; }
@@ -231,6 +230,67 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .center-cta .eyebrow { color:var(--jade);font-size:13px; }
 .product-intro { display:flex;justify-content:space-between;align-items:start;border-bottom:1px solid var(--line);padding-top:80px;padding-bottom:80px; }
 .product-intro p { max-width:670px;font:25px/1.5 Georgia,serif;color:var(--purple); }
+.numerology-bridge { display:grid;grid-template-columns:.9fr 1.1fr;gap:8vw;align-items:center;background:linear-gradient(135deg,#21102a,#44204d 70%,#542958);color:white; }
+.numerology-bridge h2 { font-size:clamp(48px,4.8vw,74px);margin:24px 0; }
+.numerology-bridge h2 em { color:#e9afd1; }
+.numerology-bridge-copy>p { color:rgba(255,255,255,.68);max-width:590px; }
+.numerology-journey { display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.15);border-left:1px solid rgba(255,255,255,.15); }
+.numerology-journey>div { min-height:190px;padding:28px;border-right:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15); }
+.numerology-journey span { display:block;color:#82c9b6;font:11px Georgia,serif;margin-bottom:35px; }
+.numerology-journey strong { display:block;font:24px Georgia,serif;font-weight:normal; }
+.numerology-journey p { margin:10px 0 0;color:rgba(255,255,255,.55);font-size:13px; }
+.ring-collection { background:linear-gradient(145deg,#f5f1ee,#ebe3e7); }
+.ring-collection-head { display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:55px; }
+.ring-collection-head h2 { font-size:clamp(48px,4.8vw,76px);margin:22px 0 0; }
+.ring-collection-head h2 em { color:var(--pink); }
+.ring-collection-head>p { max-width:410px;color:#756d74;font:18px/1.65 Georgia,serif; }
+.ring-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px; }
+.ring-card { background:#fbfaf8;border:1px solid rgba(61,31,67,.1);box-shadow:0 22px 55px rgba(39,18,44,.08);scroll-margin-top:90px; }
+.ring-card-image { position:relative;aspect-ratio:4/3;overflow:hidden;background:#111; }
+.ring-card-image img { width:100%;height:100%;object-fit:cover;transition:transform .6s ease; }
+.ring-card:hover .ring-card-image img { transform:scale(1.025); }
+.ring-card-image>span { position:absolute;top:20px;left:20px;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.9);color:var(--purple);font:11px Georgia,serif; }
+.ring-card-copy { padding:38px; }
+.ring-zh-title { margin:0;color:var(--jade);font:25px/1.2 Georgia,serif;letter-spacing:.08em; }
+.ring-card-copy h3 { margin:10px 0 20px;color:var(--purple);font:32px/1.2 Georgia,serif; }
+.ring-card-copy>p:not(.ring-zh-title) { color:#756d74;font-size:14px; }
+.ring-card-copy blockquote { margin:24px 0;padding-left:18px;border-left:2px solid var(--jade);color:var(--purple);font:italic 18px/1.5 Georgia,serif; }
+.pendant-collection-head { display:grid;grid-template-columns:1fr 1.35fr;column-gap:7vw;align-items:end;margin:100px 0 45px;padding-top:70px;border-top:1px solid var(--line); }
+.pendant-collection-head .section-label { grid-column:1/-1;margin-bottom:20px; }
+.pendant-collection-head h2 { font-size:clamp(46px,4.5vw,70px);margin:0; }
+.pendant-collection-head h2 em { color:var(--pink); }
+.pendant-collection-head>p { max-width:460px;margin:0;color:#756d74;font:18px/1.65 Georgia,serif; }
+.pendant-card-image { background:#eee9e1; }
+.ring-collection-enquiry { display:flex;align-items:center;justify-content:space-between;gap:35px;margin-top:45px;padding-top:35px;border-top:1px solid var(--line); }
+.ring-collection-enquiry p { margin:6px 0 0;color:#756d74; }
+.ring-collection-enquiry .section-label { margin:0;color:var(--jade); }
+.engraving-page-hero { background:radial-gradient(circle at 78% 66%,rgba(226,153,193,.3),transparent 29%),linear-gradient(135deg,#26122d,#502858); }
+.engraving-intro { display:grid;grid-template-columns:.9fr 1.1fr;gap:9vw;align-items:end;background:#f8f4f0; }
+.engraving-intro h2 { margin:24px 0 0;font-size:clamp(48px,4.8vw,76px); }
+.engraving-intro h2 em { color:var(--pink); }
+.engraving-intro>div:last-child>p:first-child { color:#4c414a;font:20px/1.65 Georgia,serif; }
+.engraving-catalogue { background:linear-gradient(145deg,#29132f,#4d2553);color:white; }
+.engraving-catalogue-head { display:flex;justify-content:space-between;align-items:end;gap:60px;margin-bottom:55px; }
+.engraving-catalogue-head h2 { margin:20px 0 0;font-size:clamp(48px,4.8vw,76px); }
+.engraving-catalogue-head h2 em { color:#e9afd1; }
+.engraving-category-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.15);border-left:1px solid rgba(255,255,255,.15); }
+.engraving-category { min-height:330px;padding:42px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15); }
+.engraving-category-number { color:#82c9b6;font:12px Georgia,serif; }
+.engraving-category h3 { margin:0 0 18px;font:clamp(30px,3vw,46px)/1.1 Georgia,serif;font-weight:normal; }
+.engraving-category p { max-width:460px;color:rgba(255,255,255,.62); }
+.engraving-category small { display:block;margin-top:28px;color:#e9afd1;font-size:10px;text-transform:uppercase;letter-spacing:.13em; }
+.engraving-process { background:#f8f4f0; }
+.engraving-steps { display:grid;grid-template-columns:repeat(4,1fr);margin-top:42px;border-top:1px solid var(--line);border-left:1px solid var(--line); }
+.engraving-steps>div { min-height:260px;padding:34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line); }
+.engraving-steps span { color:var(--jade);font-size:11px; }
+.engraving-steps h3 { margin:45px 0 12px;color:var(--purple);font:28px Georgia,serif;font-weight:normal; }
+.engraving-steps p { color:#756d74;font-size:13px; }
+.collection-contact { display:flex;align-items:center;justify-content:space-between;gap:70px;background:linear-gradient(135deg,#2b1433,#4b2354);color:white; }
+.collection-contact h2 { font-size:clamp(48px,5vw,76px);margin:20px 0; }
+.collection-contact h2 em { color:#e9afd1; }
+.collection-contact p { max-width:650px;color:rgba(255,255,255,.62); }
+.collection-contact .eyebrow { color:#82c9b6; }
+.collection-contact .button { flex:0 0 auto; }
 .product-detail { display:grid;grid-template-columns:1fr 1fr;gap:9vw;align-items:center;scroll-margin-top:90px; }
 .product-detail.reverse .detail-art { order:2; }
 .detail-art { min-height:600px; }
@@ -264,20 +324,20 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .dark-success p { color:#756e74;max-width:350px; }
 .dark-success button { background:transparent;border:0;margin-top:20px; }
 @media (max-width: 900px) {
-  .section{padding:85px 25px} header{height:78px;padding:0 20px}.brand-logo{width:92px;height:68px}.header-brand{gap:2px}.header-brand img{width:47px;height:47px}.header-brand span{font-size:29px}
+  .section{padding:85px 25px} header{height:78px;padding:0 20px}.brand-logo{width:92px;height:68px}.header-brand{gap:2px}.header-petals-mark{width:47px;height:47px;flex-basis:47px}.header-brand .header-wordmark{font-size:29px}
   nav{position:fixed;inset:78px 0 auto;background:#fbfaf8;color:var(--ink);padding:35px 25px;display:flex;flex-direction:column;align-items:flex-start;gap:24px;transform:translateY(-140%);transition:.35s;box-shadow:0 20px 30px rgba(31,15,36,.1)} nav.open{transform:none}.menu-toggle{display:block}
   .hero{min-height:900px;padding:140px 25px 80px;align-items:flex-start}.hero:after{right:-9vw;bottom:0;width:48vw;height:62vw;background-position:79% -9.5vw}.hero-content{width:100%}.hero h1{font-size:61px}.hero-copy{font-size:15px}.hero-actions{align-items:flex-start;flex-direction:column}.hero-art{width:70vw;right:-18vw;bottom:-1vw;opacity:.88}.heart-nine-mark{top:-2%;width:43vw}.hero-lockup{top:68%}.hero-lockup strong{font-size:23px}.scroll-cue{display:none}
-  .philosophy-grid,.story-grid,.service-overview,.destiny,.faq,.split-feature,.product-detail,.contact-section{grid-template-columns:1fr;gap:50px}
+  .philosophy-grid,.story-grid,.service-overview,.home-engraving-feature,.faq,.split-feature,.product-detail,.numerology-bridge,.engraving-intro,.contact-section{grid-template-columns:1fr;gap:50px}
   .section-head,.process-intro{display:block}.section-head>p,.process-intro>p{width:auto;margin-top:25px}
   .collection-grid{grid-template-columns:1fr}.product-art{min-height:320px}.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}
-  .destiny-form{padding:30px 22px}.footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
-  .values,.theme-grid{grid-template-columns:1fr 1fr}.value{padding:50px 25px}.split-art{min-height:430px}
-  .product-detail.reverse .detail-art{order:0}.detail-art{min-height:450px}.product-intro{display:block}.product-intro p{font-size:21px}
+  .footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-logo{width:180px;height:auto}
+  .values,.theme-grid{grid-template-columns:1fr 1fr}.value{padding:50px 25px}.split-art{min-height:430px}.engraving-steps{grid-template-columns:repeat(2,1fr)}
+  .product-detail.reverse .detail-art{order:0}.detail-art{min-height:450px}.product-intro{display:block}.product-intro p{font-size:21px}.ring-collection-head{display:block}.ring-collection-head>p{margin-top:25px}.pendant-collection-head{display:block}.pendant-collection-head>p{margin-top:25px}.ring-grid{grid-template-columns:1fr}.collection-contact{align-items:flex-start;flex-direction:column}
 }
 @media (max-width: 540px) {
   .hero .bottom-left-mantra { left:24px;right:24px;bottom:20px;max-width:none;text-align:left;font-size:13px; }
-  .hero h1,.page-hero h1{font-size:49px}.page-hero{min-height:610px;padding:150px 24px 80px}.philosophy h2,.story h2,.service-overview h2,.section-head h2,.process-intro h2,.destiny-copy h2,.faq-title h2,.split-copy h2,.consultation-flow>h2,.center-cta h2{font-size:45px}
-  .form-row,.steps,.values,.theme-grid,.flow-grid,.detail-copy ul{grid-template-columns:1fr}.step{min-height:170px}.flow-grid>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.14);padding:35px 0}
+  .hero h1,.page-hero h1{font-size:49px}.page-hero{min-height:610px;padding:150px 24px 80px}.philosophy h2,.story h2,.service-overview h2,.section-head h2,.process-intro h2,.faq-title h2,.split-copy h2,.consultation-flow>h2,.center-cta h2{font-size:45px}
+  .form-row,.steps,.values,.theme-grid,.flow-grid,.detail-copy ul,.numerology-journey{grid-template-columns:1fr}.step{min-height:170px}.flow-grid>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.14);padding:35px 0}.numerology-journey>div{min-height:155px}
   .faq-item button{font-size:17px}.footer-top{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}
-  .detail-art{min-height:360px}.contact-form{padding:35px 22px}.social-line{display:block}.social-line span{display:block;margin-top:8px}
+  .detail-art{min-height:360px}.ring-card-copy{padding:28px 22px}.ring-collection-enquiry{align-items:flex-start;flex-direction:column}.home-engraving-occasions{min-height:360px;padding:34px 26px}.engraving-catalogue-head{display:block}.engraving-category-grid,.engraving-steps{grid-template-columns:1fr}.engraving-category{min-height:280px;padding:30px 24px}.engraving-steps>div{min-height:210px}.contact-form{padding:35px 22px}.social-line{display:block}.social-line span{display:block;margin-top:8px}
 }

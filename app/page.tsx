@@ -6,24 +6,35 @@ import { useState } from "react";
 const offerings = [
   {
     number: "01",
+    title: "Blessing Rings",
+    text: "Symbols of harmony, prosperity and enduring fortune, created with personal meaning.",
+    href: "/products#silver-bamboo-blessing-ring",
+    visual: "ring",
+    image: "/products/silver-bamboo-ring.jpeg",
+  },
+  {
+    number: "02",
+    title: "Blessing Pendants",
+    text: "Personal symbols of progress and abundance, designed to be carried close every day.",
+    href: "/products#fortune-bamboo-pendant",
+    visual: "pendant",
+    image: "/products/fortune-bamboo-pendant.jpeg",
+  },
+  {
+    number: "03",
     title: "Customized Destiny Bracelet",
     text: "A meaningful composition of natural stones, selected through your personal numerology profile.",
     href: "/products#bracelet",
     visual: "bracelet",
+    image: null,
   },
   {
-    number: "02",
+    number: "04",
     title: "Personalized Destiny Watch",
     text: "A distinctive timepiece thoughtfully personalized with the numbers, colours and details that speak to your journey.",
     href: "/products#watch",
     visual: "watch",
-  },
-  {
-    number: "03",
-    title: "Laser Engraving Gifts",
-    text: "Beautifully engraved keepsakes and corporate gifts, made personal for every milestone and occasion.",
-    href: "/products#engraving",
-    visual: "gift",
+    image: null,
   },
 ];
 
@@ -36,7 +47,6 @@ const faqs = [
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
 
   return (
     <>
@@ -92,10 +102,10 @@ export default function Home() {
       <section className="collections section">
         <div className="section-head">
           <div>
-            <div className="section-label light">02 / Signature Collections</div>
+            <div className="section-label light">02 / Our Collections</div>
             <h2>Made with meaning.<br /><em>Worn with purpose.</em></h2>
           </div>
-          <p>Three expressions of personalization, each shaped around your story and crafted to become part of it.</p>
+          <p>Four Numerology-guided jewellery collections, each shaped around personal meaning, supportive energy and thoughtful design.</p>
         </div>
         <p className="zh-copy light-zh section-zh" lang="zh">从数字了解自己，再把专属能量融入日常。每一件作品，都以你的独特数字组合为灵感。</p>
         <div className="collection-grid">
@@ -103,7 +113,7 @@ export default function Home() {
             <Link className="collection-card" href={item.href} key={item.title}>
               <div className={`product-art ${item.visual}`}>
                 <span className="product-number">{item.number}</span>
-                <div className="product-object" />
+                {item.image ? <img className="collection-product-image" src={item.image} alt="" /> : <div className="product-object" />}
               </div>
               <div className="collection-info">
                 <h3>{item.title}</h3>
@@ -112,6 +122,23 @@ export default function Home() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="home-engraving-feature section">
+        <div className="home-engraving-copy">
+          <div className="section-label">The DeCode9 Gifting Studio</div>
+          <p className="home-engraving-note">A dedicated service beyond Numerology</p>
+          <h2>Personalized gifts<br />for <em>every occasion.</em></h2>
+          <p>Explore our separate laser engraving collection for corporate gifting, weddings, celebrations and personal keepsakes. No Numerology consultation is required.</p>
+          <p className="zh-copy" lang="zh">独立的激光雕刻礼品系列，适合企业赠礼、婚礼、庆典与个人纪念品，无需数字命理咨询。</p>
+          <Link className="button button-primary" href="/engraving">Explore engraved gifts <span>→</span></Link>
+        </div>
+        <div className="home-engraving-occasions" aria-hidden="true">
+          <span>Corporate</span>
+          <span>Weddings</span>
+          <span>Celebrations</span>
+          <small>Names · Dates · Messages · Logos</small>
         </div>
       </section>
 
@@ -134,36 +161,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="destiny section">
-        <div className="destiny-copy">
-          <div className="section-label light">04 / A First Step</div>
-          <h2>Curious what your<br />numbers may <em>reveal?</em></h2>
-          <p>Share a few details and begin a conversation about your personal numerical blueprint. Your full reading is always guided by a DeCode9 consultant.</p>
-        </div>
-        <p className="zh-copy light-zh" lang="zh">提供出生资料，让我们为你梳理独一无二的数字命盘，认识已有的优势，也看见缺失数字所提示的人生课题。</p>
-        <form className="destiny-form" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
-          {submitted ? (
-            <div className="form-success"><span>✦</span><h3>Your journey has begun.</h3><p>Thank you. We’ll be in touch to arrange your personal consultation.</p></div>
-          ) : (
-            <>
-              <label>YOUR NAME<input required name="name" placeholder="How shall we address you?" /></label>
-              <div className="form-row">
-                <label>DATE OF BIRTH<input required type="date" name="birthdate" /></label>
-                <label className="birth-time-tick">
-                  <input type="checkbox" name="bornBetween11And1159pm" />
-                  <span>If you are born between 11.00pm - 11.59pm please tick</span>
-                </label>
-              </div>
-              <label>CONTACT NUMBER<input required type="tel" name="phone" placeholder="+65" /></label>
-              <button className="button button-light" type="submit">Discover my destiny <span>→</span></button>
-              <small className="privacy-note">Your information is kept private and used only to respond to your enquiry.</small>
-            </>
-          )}
-        </form>
-      </section>
-
       <section className="testimonials section">
-        <div className="section-label">05 / Words From Our Clients</div>
+        <div className="section-label">04 / Words From Our Clients</div>
         <div className="quote-mark">“</div>
         <blockquote>The consultation felt warm, thoughtful and deeply personal. My bracelet is beautiful—but knowing the meaning behind every detail makes it truly special.</blockquote>
         <p className="zh-copy centered-zh" lang="zh">认识自己的数字，不是为人生设限，而是更清楚地看见自己的内在、外在与成长方向。</p>
@@ -173,7 +172,7 @@ export default function Home() {
 
       <section className="faq section">
         <div className="faq-title">
-          <div className="section-label">06 / Questions, Answered</div>
+          <div className="section-label">05 / Questions, Answered</div>
           <h2>A little more<br /><em>clarity.</em></h2>
           <p>Still curious? We’re always happy to have a conversation.</p>
           <p className="zh-copy" lang="zh">想知道某个数字为何反复出现，或缺失数字代表什么？我们会用清晰、易懂的方式为你说明。</p>

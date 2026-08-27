@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const nav = [["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Products", "/products"], ["Contact", "/contact"]];
+const nav = [["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Jewellery", "/products"], ["Engraved Gifts", "/engraving"], ["Contact", "/contact"]];
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -22,8 +22,8 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
     <>
       <header className={`${scrolled ? "scrolled" : ""} ${pathname !== "/" ? "inner-header" : ""}`}>
         <Link href="/" className="header-brand" aria-label="DeCode9 home">
-          <img src="/heart9-transparent.png" alt="" />
-          <span><b>De</b>Code<i>9</i></span>
+          <span className="header-petals-mark" aria-hidden="true"><img src="/heart9-transparent.png" alt="" /></span>
+          <span className="header-wordmark"><b>De</b>Code<i>9</i></span>
         </Link>
         <nav className={open ? "open" : ""} aria-label="Main navigation">
           {nav.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href}>{label}</Link>)}
@@ -32,7 +32,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label="Toggle navigation" aria-expanded={open}><span /><span /></button>
       </header>
       {children}
-      <a className="whatsapp" href="https://wa.me/" aria-label="Chat with DeCode9 on WhatsApp">✦<span>Chat with us</span></a>
+      <a className="whatsapp" href="https://wa.me/6588651341?text=Hello%20DeCode9%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noreferrer" aria-label="Chat with DeCode9 on WhatsApp">✦<span>Chat with us</span></a>
     </>
   );
 }

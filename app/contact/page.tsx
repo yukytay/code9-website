@@ -18,8 +18,8 @@ export default function Contact() {
           <h2>A personal response,<br /><em>always.</em></h2>
           <p>Send us a note using the form. A member of the DeCode9 team will respond during business hours.</p>
           <p className="zh-copy" lang="zh">告诉我们你希望了解的方向。我们会以简单清晰的方式，陪你从数字中认识自己，并看见可以继续成长与补足的部分。</p>
-          <div className="contact-method"><span>01</span><div><b>WhatsApp</b><a href="https://wa.me/">Start a conversation →</a></div></div>
-          <div className="contact-method"><span>02</span><div><b>Email</b><a href="mailto:hello@code9.sg">hello@code9.sg</a></div></div>
+          <div className="contact-method"><span>01</span><div><b>WhatsApp</b><a href="https://wa.me/6588651341?text=Hello%20DeCode9%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noreferrer">Start a conversation →</a></div></div>
+          <div className="contact-method"><span>02</span><div><b>Email</b><a href="mailto:info.decode9@gmail.com">info.decode9@gmail.com</a></div></div>
           <div className="contact-method"><span>03</span><div><b>Business hours</b><p>Monday–Saturday · 10am–7pm</p></div></div>
           <div className="social-line">Follow our journey <span>Instagram · Facebook</span></div>
         </div>
