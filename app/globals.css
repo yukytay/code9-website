@@ -324,6 +324,11 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .contact-form select { color:#645764; }
 .contact-form textarea { resize:vertical; }
 .contact-form .button { width:100%; }
+.contact-direct { display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:24px; }
+.contact-direct .section-label { margin-bottom:4px; }
+.contact-direct h2 { margin:0;font-size:clamp(42px,4vw,62px); }
+.contact-direct>p { color:#756e74;line-height:1.7; }
+.contact-direct .text-link { margin-top:4px; }
 .dark-note { color:#635863; }
 .dark-success { min-height:470px;display:flex;flex-direction:column;justify-content:center;align-items:center; }
 .dark-success p { color:#756e74;max-width:350px; }
@@ -346,3 +351,4 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
   .faq-item button{font-size:17px}.footer-top{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}
   .detail-art{min-height:360px}.ring-card-copy{padding:28px 22px}.ring-collection-enquiry{align-items:flex-start;flex-direction:column}.home-engraving-occasions{min-height:360px;padding:34px 26px}.engraving-catalogue-head{display:block}.engraving-category-grid,.engraving-steps{grid-template-columns:1fr}.engraving-category{min-height:280px;padding:30px 24px}.engraving-steps>div{min-height:210px}.contact-form{padding:35px 22px}.social-line{display:block}.social-line span{display:block;margin-top:8px}
 }
+
