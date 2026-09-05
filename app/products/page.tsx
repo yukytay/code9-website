@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "Numerology Jewellery", description: "Explore DeCode9 Numerology-guided rings, pendants, bracelets and watches, personalized to support your individual energy profile." };
 
 const bracelets = [
-  { sku:"DB001", id:"destiny-numbers-bracelet", zhTitle:"数运随行", title:"Destiny Numbers", zh:"数有所寓，运有所随；吉数相连，福运相伴。", desc:"Symbolizing personal strengths, balance, blessings and good fortune.", images:["/products/bracelets/db001-01.jpeg"] },
-  { sku:"DB002", id:"blessing-signature-bracelet", zhTitle:"福运密码", title:"Blessing Signature", zh:"数字有意，福运有迹；戴上属于你的福运密码。", desc:"Representing balance, strength, prosperity and good fortune.", images:["/products/bracelets/db002-01.jpeg","/products/bracelets/db002-02.jpeg","/products/bracelets/db002-03.jpeg","/products/bracelets/db002-04.jpeg"] },
-  { sku:"DB003", id:"golden-brilliance-bracelet", zhTitle:"金福密码", title:"Golden Brilliance", zh:"金色数字象征财富、丰盛、成就与尊荣。", desc:"The black-and-gold combination represents strength, stability, prosperity and achievement.", images:["/products/bracelets/db003-01.jpeg"] },
-  { sku:"DB004", id:"timeless-prosperity-bracelet", zhTitle:"数运恒昌", title:"Timeless Prosperity", zh:"吉数相连，福运相承；财运亨通，恒久昌盛。", desc:"Symbolizes fortune flowing forward, blessings continuing, and opportunities unfolding.", images:["/products/bracelets/db004-01.jpeg","/products/bracelets/db004-02.jpeg"] },
+  { sku:"DB001", id:"destiny-numbers-bracelet", zhTitle:"数运随行", title:"Destiny Numbers", zh:"数有所寓，运有所随；吉数相连，福运相伴。", desc:"Symbolizing personal strengths, balance, blessings and good fortune.", images:["/products/bracelets/DB001-Destiny-Numbers-Final-01.jpeg"] },
+  { sku:"DB002", id:"blessing-signature-bracelet", zhTitle:"福运密码", title:"Blessing Signature", zh:"数字有意，福运有迹；戴上属于你的福运密码。", desc:"Representing balance, strength, prosperity and good fortune.", images:["/products/bracelets/DB002-Blessing-Signature-Final-01.jpeg","/products/bracelets/DB002-Blessing-Signature-Final-02.jpeg","/products/bracelets/DB002-Blessing-Signature-Final-03.jpeg","/products/bracelets/DB002-Blessing-Signature-Final-04.jpeg"] },
+  { sku:"DB003", id:"golden-brilliance-bracelet", zhTitle:"金福密码", title:"Golden Brilliance", zh:"金色数字象征财富、丰盛、成就与尊荣。", desc:"The black-and-gold combination represents strength, stability, prosperity and achievement.", images:["/products/bracelets/DB003-Golden-Brilliance-Final-01.jpeg"] },
+  { sku:"DB004", id:"timeless-prosperity-bracelet", zhTitle:"数运恒昌", title:"Timeless Prosperity", zh:"吉数相连，福运相承；财运亨通，恒久昌盛。", desc:"Symbolizes fortune flowing forward, blessings continuing, and opportunities unfolding.", images:["/products/bracelets/DB004-Timeless-Prosperity-Final-01.jpeg","/products/bracelets/DB004-Timeless-Prosperity-Final-02.jpeg"] },
 ];
 
 const watches = [
@@ -162,7 +162,7 @@ export default function Products() {
         <div className="ring-grid product-gallery-grid">
           {bracelets.map((bracelet) => (
             <article className="ring-card" id={bracelet.id} key={bracelet.sku}>
-              <div className={`sku-image-gallery count-${bracelet.images.length}`}>
+              <div className={`bracelet-photo-rotator count-${bracelet.images.length}`}>
                 {bracelet.images.map((image, index) => <img src={image} alt={`${bracelet.title} bracelet${bracelet.images.length > 1 ? ` view ${index + 1}` : ""}`} key={image} />)}
               </div>
               <div className="ring-card-copy">
