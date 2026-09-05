@@ -18,6 +18,7 @@ const watches = [
 
 const rings = [
   {
+    sku: "DR001",
     id: "silver-bamboo-blessing-ring",
     zhTitle: "银竹呈祥",
     title: "Silver Bamboo Blessing Ring",
@@ -28,6 +29,7 @@ const rings = [
     imageAlt: "Silver Bamboo Blessing Ring displayed on black velvet",
   },
   {
+    sku: "DR004",
     id: "golden-bamboo-blessing-ring",
     zhTitle: "金竹纳福戒",
     title: "Golden Bamboo Blessing Ring",
@@ -38,6 +40,7 @@ const rings = [
     imageAlt: "Golden Bamboo Blessing Ring displayed on natural stone",
   },
   {
+    sku: "DR002",
     id: "fortune-halo-ring",
     zhTitle: "幸运之环",
     title: "Fortune Halo Ring",
@@ -48,6 +51,7 @@ const rings = [
     imageAlt: "Silver Fortune Halo Ring displayed on black velvet",
   },
   {
+    sku: "DR003",
     id: "eternal-nine-ring",
     zhTitle: "九曜聚福",
     title: "Eternal Nine Ring",
@@ -61,6 +65,7 @@ const rings = [
 
 const pendants = [
   {
+    sku: "DP001",
     id: "fortune-bamboo-pendant",
     zhTitle: "福竹呈祥",
     title: "Fortune Bamboo Pendant",
@@ -71,6 +76,7 @@ const pendants = [
     imageAlt: "Silver Fortune Bamboo Pendant displayed on white satin",
   },
   {
+    sku: "DP002",
     id: "bag-of-blessings-pendant",
     zhTitle: "福运满袋",
     title: "Bag of Blessings Pendant",
@@ -121,6 +127,7 @@ export default function Products() {
                 <span>{String(index + 1).padStart(2, "0")}</span>
               </div>
               <div className="ring-card-copy">
+                <div className="product-sku">SKU: {ring.sku}</div>
                 <p className="ring-zh-title" lang="zh">{ring.zhTitle}</p>
                 <h3>{ring.title}</h3>
                 <p className="zh-copy" lang="zh">{ring.zh}</p>
@@ -143,6 +150,7 @@ export default function Products() {
                 <span>{String(index + 1).padStart(2, "0")}</span>
               </div>
               <div className="ring-card-copy">
+                <div className="product-sku">SKU: {pendant.sku}</div>
                 <p className="ring-zh-title" lang="zh">{pendant.zhTitle}</p>
                 <h3>{pendant.title}</h3>
                 <p className="zh-copy" lang="zh">{pendant.zh}</p>
