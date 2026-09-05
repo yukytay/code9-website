@@ -263,14 +263,19 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .product-catalogue-section { background:linear-gradient(145deg,#fbf8f6,#f0e9ee); }
 .product-gallery-grid { align-items:start; }
 .product-sku { margin-bottom:12px;color:var(--jade);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase; }
-.bracelet-photo-rotator { position:relative;height:540px;overflow:hidden;background:linear-gradient(145deg,#2d2131,#171019); }
-.bracelet-photo-rotator img { position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;opacity:0;animation:bracelet-photo-four 28s ease-in-out infinite; }
+.bracelet-card { border:0; }
+.bracelet-photo-rotator { position:relative;height:540px;overflow:hidden;background:transparent; }
+.bracelet-card:nth-child(1) { --bracelet-offset:0s; }
+.bracelet-card:nth-child(2) { --bracelet-offset:-2s; }
+.bracelet-card:nth-child(3) { --bracelet-offset:-4s; }
+.bracelet-card:nth-child(4) { --bracelet-offset:-6s; }
+.bracelet-photo-rotator img { position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;animation:bracelet-photo-four 28s ease-in-out var(--bracelet-offset,0s) infinite; }
 .bracelet-photo-rotator.count-1 img { opacity:1;animation:none; }
 .bracelet-photo-rotator.count-2 img { animation-name:bracelet-photo-two;animation-duration:16s; }
-.bracelet-photo-rotator.count-2 img:nth-child(2) { animation-delay:-8s; }
-.bracelet-photo-rotator.count-4 img:nth-child(2) { animation-delay:-21s; }
-.bracelet-photo-rotator.count-4 img:nth-child(3) { animation-delay:-14s; }
-.bracelet-photo-rotator.count-4 img:nth-child(4) { animation-delay:-7s; }
+.bracelet-photo-rotator.count-2 img:nth-child(2) { animation-delay:calc(var(--bracelet-offset,0s) - 8s); }
+.bracelet-photo-rotator.count-4 img:nth-child(2) { animation-delay:calc(var(--bracelet-offset,0s) - 21s); }
+.bracelet-photo-rotator.count-4 img:nth-child(3) { animation-delay:calc(var(--bracelet-offset,0s) - 14s); }
+.bracelet-photo-rotator.count-4 img:nth-child(4) { animation-delay:calc(var(--bracelet-offset,0s) - 7s); }
 @keyframes bracelet-photo-two { 0%,40%{opacity:1} 50%,90%{opacity:0} 100%{opacity:1} }
 @keyframes bracelet-photo-four { 0%,15%{opacity:1} 25%,90%{opacity:0} 100%{opacity:1} }
 .sku-image-gallery { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:#25182a; }
