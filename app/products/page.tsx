@@ -2,9 +2,18 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Numerology Jewellery", description: "Explore DeCode9 Numerology-guided rings, pendants, bracelets and watches, personalized to support your individual energy profile." };
 
-const products = [
-  { id:"bracelet", num:"01", title:"Customized Destiny Bracelet", italic:"Intention, worn beautifully.", desc:"A personal composition of natural stones, colours and details inspired by your Numerology profile.", zh:"根据你的独特数字组合与所需补充的能量，搭配天然晶石、颜色与细节。", bullets:["Natural stone selection","Personal colour guidance","Size and style customization","Premium gift presentation"], art:"bracelet" },
-  { id:"watch", num:"02", title:"Personalized Destiny Watch", italic:"Your time. Your story.", desc:"A refined timepiece made more meaningful through subtle, personal details connected to your unique numerical blueprint.", zh:"把专属数字、助力颜色与个人寓意融入腕表，让时间承载你的故事。", bullets:["Selected watch styles","Lucky number integration","Personal engraving","Signature gift packaging"], art:"watch" },
+const bracelets = [
+  { sku:"DB001", id:"destiny-numbers-bracelet", zhTitle:"数运随行", title:"Destiny Numbers", zh:"数有所寓，运有所随；吉数相连，福运相伴。", desc:"Symbolizing personal strengths, balance, blessings and good fortune.", images:["/products/bracelets/db001-01.jpeg"] },
+  { sku:"DB002", id:"blessing-signature-bracelet", zhTitle:"福运密码", title:"Blessing Signature", zh:"数字有意，福运有迹；戴上属于你的福运密码。", desc:"Representing balance, strength, prosperity and good fortune.", images:["/products/bracelets/db002-01.jpeg","/products/bracelets/db002-02.jpeg","/products/bracelets/db002-03.jpeg","/products/bracelets/db002-04.jpeg"] },
+  { sku:"DB003", id:"golden-brilliance-bracelet", zhTitle:"金福密码", title:"Golden Brilliance", zh:"金色数字象征财富、丰盛、成就与尊荣。", desc:"The black-and-gold combination represents strength, stability, prosperity and achievement.", images:["/products/bracelets/db003-01.jpeg"] },
+  { sku:"DB004", id:"timeless-prosperity-bracelet", zhTitle:"数运恒昌", title:"Timeless Prosperity", zh:"吉数相连，福运相承；财运亨通，恒久昌盛。", desc:"Symbolizes fortune flowing forward, blessings continuing, and opportunities unfolding.", images:["/products/bracelets/db004-01.jpeg","/products/bracelets/db004-02.jpeg"] },
+];
+
+const watches = [
+  { sku:"DW001", id:"eclat-28-watch", zhTitle:"璀光 28", title:"Éclat 28", size:"28 mm", zh:"代表璀璨、光芒与自信。数字元素象征个人独特的特质与人生密码；圆形表盘寓意圆满、和谐与循环不息；金银双色象征平衡与丰盛。", desc:"The personalised numbers symbolize individuality and personal strengths, while the circular design represents balance, harmony and continuity. The sparkling details signify brilliance, confidence and achievement.", images:["/products/watches/dw001-01.jpeg","/products/watches/dw001-02.jpeg"] },
+  { sku:"DW002", id:"celestial-harmony-dw002-watch", zhTitle:"乾坤有序", title:"Celestial Harmony", size:"38 mm", zh:"太极与八卦寓意阴阳协调、万物有序；镂空机械不断运转，则象征时光流转、生生不息、人生持续向前、财气汇聚。乾坤有序，阴阳相和；时光流转，万事和鸣。", desc:"Individual strengths and life direction. The Yin-Yang and Bagua elements represent balance and harmony, while the open-heart mechanical movement symbolizes continuous motion, vitality and progress.", blessing:"Align your numbers. Balance your path. Let prosperity grow with time.", images:["/products/watches/dw002-01.jpeg","/products/watches/dw002-02.jpeg"] },
+  { sku:"DW003", id:"celestial-harmony-dw003-watch", zhTitle:"乾坤有序", title:"Celestial Harmony", size:"38 mm", zh:"太极与八卦寓意阴阳协调、万物有序；镂空机械不断运转，则象征时光流转、生生不息、人生持续向前、财气汇聚。乾坤有序，阴阳相和；时光流转，万事和鸣。", desc:"Individual strengths and life direction. The Yin-Yang and Bagua elements represent balance and harmony, while the open-heart mechanical movement symbolizes continuous motion, vitality and progress.", blessing:"Align your numbers. Balance your path. Let prosperity grow with time.", images:["/products/watches/dw003-01.jpeg","/products/watches/dw003-02.jpeg"] },
+  { sku:"DW004", id:"harmony-of-time-watch", zhTitle:"数悦时光", title:"Harmony of Time", size:"36 mm", zh:"寓意数字平衡、阴阳协调、生活顺遂；璀璨表圈象征光芒、圆满与财富循环，亦代表丰盛、成就与财气生辉。提升财运、汇聚财富机遇、贵人相助、事业增长、聚财守财。", desc:"A symbolic timepiece inspired by wealth, balance and continuous growth. Enhanced wealth opportunities, steady financial growth, successful career development and lasting prosperity.", blessing:"Balance your path. Seize opportunities. Let prosperity grow with time.", images:["/products/watches/dw004-01.jpeg"] },
 ];
 
 const rings = [
@@ -144,19 +153,52 @@ export default function Products() {
           ))}
         </div>
       </section>
-      {products.map((product, i) => (
-        <section className={`product-detail section ${i % 2 ? "reverse" : ""}`} id={product.id} key={product.id}>
-          <div className={`detail-art ${product.art}`}><span>{product.num}</span><div className="product-object" /></div>
-          <div className="detail-copy">
-            <div className="section-label">{product.num} / Signature Collection</div>
-            <h2>{product.title}</h2>
-            <h3>{product.italic}</h3>
-            <p>{product.desc}</p>
-            <p className="zh-copy" lang="zh">{product.zh}</p>
-            <ul>{product.bullets.map(b => <li key={b}><span>✦</span>{b}</li>)}</ul>
-          </div>
-        </section>
-      ))}
+      <section className="product-catalogue-section section" id="bracelet">
+        <div className="pendant-collection-head">
+          <div className="section-label">Destiny Bracelets</div>
+          <h2>Meaning in every link.<br /><em>Fortune worn daily.</em></h2>
+          <p>Personal number bracelets created to express balance, brilliance, prosperity and lasting blessings.</p>
+        </div>
+        <div className="ring-grid product-gallery-grid">
+          {bracelets.map((bracelet) => (
+            <article className="ring-card" id={bracelet.id} key={bracelet.sku}>
+              <div className={`sku-image-gallery count-${bracelet.images.length}`}>
+                {bracelet.images.map((image, index) => <img src={image} alt={`${bracelet.title} bracelet${bracelet.images.length > 1 ? ` view ${index + 1}` : ""}`} key={image} />)}
+              </div>
+              <div className="ring-card-copy">
+                <div className="product-sku">SKU: {bracelet.sku}</div>
+                <p className="ring-zh-title" lang="zh">{bracelet.zhTitle}</p>
+                <h3>{bracelet.title}</h3>
+                <p className="zh-copy" lang="zh">{bracelet.zh}</p>
+                <p>{bracelet.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="pendant-collection-head" id="watch">
+          <div className="section-label">Destiny Watches</div>
+          <h2>Your time, aligned.<br /><em>Your story, revealed.</em></h2>
+          <p>Distinctive watches with meaningful numerical details, created around balance, confidence and continuous growth.</p>
+        </div>
+        <div className="ring-grid product-gallery-grid">
+          {watches.map((watch) => (
+            <article className="ring-card" id={watch.id} key={watch.sku}>
+              <div className={`sku-image-gallery count-${watch.images.length}`}>
+                {watch.images.map((image, index) => <img src={image} alt={`${watch.title} watch${watch.images.length > 1 ? ` view ${index + 1}` : ""}`} key={image} />)}
+              </div>
+              <div className="ring-card-copy">
+                <div className="product-sku">SKU: {watch.sku} · Diameter: {watch.size}</div>
+                <p className="ring-zh-title" lang="zh">{watch.zhTitle}</p>
+                <h3>{watch.title}</h3>
+                <p className="zh-copy" lang="zh">{watch.zh}</p>
+                <p>{watch.desc}</p>
+                {watch.blessing ? <blockquote>“{watch.blessing}”</blockquote> : null}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
       <section className="collection-contact section">
         <div><p className="eyebrow">Your personal creation</p><h2>Discover what your<br /><em>numbers reveal.</em></h2><p>Begin with a Numerology consultation and let us create a meaningful piece designed around your individual energy profile.</p></div>
         <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Chat with us on WhatsApp <span>↗</span></a>

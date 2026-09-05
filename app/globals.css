@@ -260,6 +260,15 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .ring-card-copy h3 { margin:10px 0 20px;color:var(--purple);font:32px/1.2 Georgia,serif; }
 .ring-card-copy>p:not(.ring-zh-title) { color:#756d74;font-size:14px; }
 .ring-card-copy blockquote { margin:24px 0;padding-left:18px;border-left:2px solid var(--jade);color:var(--purple);font:italic 18px/1.5 Georgia,serif; }
+.product-catalogue-section { background:linear-gradient(145deg,#fbf8f6,#f0e9ee); }
+.product-gallery-grid { align-items:start; }
+.product-sku { margin-bottom:12px;color:var(--jade);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase; }
+.sku-image-gallery { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:#25182a; }
+.sku-image-gallery img { display:block;width:100%;height:260px;object-fit:cover; }
+.sku-image-gallery.count-1 { grid-template-columns:1fr; }
+.sku-image-gallery.count-1 img { height:430px; }
+.sku-image-gallery.count-3 img:first-child { grid-row:span 2;height:523px; }
+.sku-image-gallery.count-4 img { height:255px; }
 .pendant-collection-head { display:grid;grid-template-columns:1fr 1.35fr;column-gap:7vw;align-items:end;margin:100px 0 45px;padding-top:70px;border-top:1px solid var(--line); }
 .pendant-collection-head .section-label { grid-column:1/-1;margin-bottom:20px; }
 .pendant-collection-head h2 { font-size:clamp(46px,4.5vw,70px);margin:0; }
@@ -342,13 +351,13 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
   .collection-grid{grid-template-columns:1fr}.product-art{min-height:320px}.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}
   .footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-mark{width:78px;height:78px}.footer-wordmark strong{font-size:34px}
   .values,.theme-grid{grid-template-columns:1fr 1fr}.value{padding:50px 25px}.split-art{min-height:430px}.engraving-steps{grid-template-columns:repeat(2,1fr)}
-  .product-detail.reverse .detail-art{order:0}.detail-art{min-height:450px}.product-intro{display:block}.product-intro p{font-size:21px}.ring-collection-head{display:block}.ring-collection-head>p{margin-top:25px}.pendant-collection-head{display:block}.pendant-collection-head>p{margin-top:25px}.ring-grid{grid-template-columns:1fr}.collection-contact{align-items:flex-start;flex-direction:column}
+  .product-detail.reverse .detail-art{order:0}.detail-art{min-height:450px}.product-intro{display:block}.product-intro p{font-size:21px}.ring-collection-head{display:block}.ring-collection-head>p{margin-top:25px}.pendant-collection-head{display:block}.pendant-collection-head>p{margin-top:25px}.ring-grid{grid-template-columns:1fr}.collection-contact{align-items:flex-start;flex-direction:column}.sku-image-gallery img{height:300px}.sku-image-gallery.count-1 img{height:500px}.sku-image-gallery.count-3 img:first-child{height:603px}.sku-image-gallery.count-4 img{height:290px}
 }
 @media (max-width: 540px) {
   .hero .bottom-left-mantra { left:24px;right:24px;bottom:20px;max-width:none;text-align:left;font-size:13px; }
   .hero h1,.page-hero h1{font-size:49px}.page-hero{min-height:610px;padding:150px 24px 80px}.philosophy h2,.story h2,.service-overview h2,.section-head h2,.process-intro h2,.faq-title h2,.split-copy h2,.consultation-flow>h2,.center-cta h2{font-size:45px}
   .form-row,.steps,.values,.theme-grid,.flow-grid,.detail-copy ul,.numerology-journey{grid-template-columns:1fr}.step{min-height:170px}.flow-grid>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.14);padding:35px 0}.numerology-journey>div{min-height:155px}
   .faq-item button{font-size:17px}.footer-top{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}
-  .detail-art{min-height:360px}.ring-card-copy{padding:28px 22px}.ring-collection-enquiry{align-items:flex-start;flex-direction:column}.home-engraving-occasions{min-height:360px;padding:34px 26px}.engraving-catalogue-head{display:block}.engraving-category-grid,.engraving-steps{grid-template-columns:1fr}.engraving-category{min-height:280px;padding:30px 24px}.engraving-steps>div{min-height:210px}.contact-form{padding:35px 22px}.social-line{display:block}.social-line span{display:block;margin-top:8px}
+  .detail-art{min-height:360px}.ring-card-copy{padding:28px 22px}.ring-collection-enquiry{align-items:flex-start;flex-direction:column}.home-engraving-occasions{min-height:360px;padding:34px 26px}.engraving-catalogue-head{display:block}.engraving-category-grid,.engraving-steps{grid-template-columns:1fr}.engraving-category{min-height:280px;padding:30px 24px}.engraving-steps>div{min-height:210px}.contact-form{padding:35px 22px}.social-line{display:block}.social-line span{display:block;margin-top:8px}.sku-image-gallery{grid-template-columns:1fr}.sku-image-gallery img,.sku-image-gallery.count-1 img,.sku-image-gallery.count-3 img:first-child,.sku-image-gallery.count-4 img{height:360px;grid-row:auto}
 }
 
