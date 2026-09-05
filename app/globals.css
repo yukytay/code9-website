@@ -123,6 +123,13 @@ nav>a.active:after { content:""; position:absolute; width:4px; height:4px; borde
 .collection-product-image { width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .6s ease; }
 .collection-card:hover .collection-product-image { transform:scale(1.035); }
 .product-art:has(.collection-product-image) .product-number { z-index:2;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(42,20,48,.78);opacity:1; }
+.home-product-rotator { position:absolute;inset:0;background:transparent; }
+.home-product-rotator img { opacity:0;animation:home-product-fade 18s ease-in-out var(--home-product-offset,0s) infinite; }
+.home-product-rotator.count-1 img { opacity:1;animation:none; }
+.home-product-rotator.count-2 img:nth-child(2) { animation-delay:calc(var(--home-product-offset,0s) - 9s); }
+.collection-card:nth-child(3) { --home-product-offset:0s; }
+.collection-card:nth-child(4) { --home-product-offset:-3s; }
+@keyframes home-product-fade { 0%,42%{opacity:1} 50%,92%{opacity:0} 100%{opacity:1} }
 .product-object { position:absolute; inset:0; margin:auto; }
 .bracelet .product-object { width:190px;height:190px;border:25px dotted #c991b6;border-radius:50%;filter:drop-shadow(0 16px 12px #1f0b27);transform:rotate(-18deg); }
 .watch .product-object { width:130px;height:180px;border:10px solid #b980a9;border-radius:24px;background:radial-gradient(circle,#813a75,#28112f);box-shadow:0 -100px 0 -45px #b980a9,0 100px 0 -45px #b980a9,0 20px 30px #1b081f; }
@@ -387,5 +394,7 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 @media (prefers-reduced-motion: reduce) {
   .bracelet-photo-rotator img,.watch-photo-rotator img { display:none;animation:none; }
   .bracelet-photo-rotator img:first-child,.watch-photo-rotator img:first-child { display:block;opacity:1; }
+  .home-product-rotator img { display:none;animation:none; }
+  .home-product-rotator img:first-child { display:block;opacity:1; }
 }
 

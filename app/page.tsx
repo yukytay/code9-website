@@ -10,7 +10,7 @@ const offerings = [
     text: "Symbols of harmony, prosperity and enduring fortune, created with personal meaning.",
     href: "/products#silver-bamboo-blessing-ring",
     visual: "ring",
-    image: "/products/silver-bamboo-ring.jpeg",
+    images: ["/products/silver-bamboo-ring.jpeg"],
   },
   {
     number: "02",
@@ -18,7 +18,7 @@ const offerings = [
     text: "Personal symbols of progress and abundance, designed to be carried close every day.",
     href: "/products#fortune-bamboo-pendant",
     visual: "pendant",
-    image: "/products/fortune-bamboo-pendant.jpeg",
+    images: ["/products/fortune-bamboo-pendant.jpeg"],
   },
   {
     number: "03",
@@ -26,7 +26,10 @@ const offerings = [
     text: "A meaningful composition of natural stones, selected through your personal numerology profile.",
     href: "/products#bracelet",
     visual: "bracelet",
-    image: null,
+    images: [
+      "/products/bracelets/DB001-Destiny-Numbers-Final.png",
+      "/products/bracelets/DB001-Destiny-Numbers-Final-02.png",
+    ],
   },
   {
     number: "04",
@@ -34,7 +37,10 @@ const offerings = [
     text: "A distinctive timepiece thoughtfully personalized with the numbers, colours and details that speak to your journey.",
     href: "/products#watch",
     visual: "watch",
-    image: null,
+    images: [
+      "/products/watches/dw001-eclat-28-final-01.jpeg",
+      "/products/watches/dw001-eclat-28-final-02.jpeg",
+    ],
   },
 ];
 
@@ -113,7 +119,16 @@ export default function Home() {
             <Link className="collection-card" href={item.href} key={item.title}>
               <div className={`product-art ${item.visual}`}>
                 <span className="product-number">{item.number}</span>
-                {item.image ? <img className="collection-product-image" src={item.image} alt="" /> : <div className="product-object" />}
+                <div className={`home-product-rotator count-${item.images.length}`}>
+                  {item.images.map((image, index) => (
+                    <img
+                      className="collection-product-image"
+                      src={image}
+                      alt={`${item.title}${item.images.length > 1 ? ` view ${index + 1}` : ""}`}
+                      key={image}
+                    />
+                  ))}
+                </div>
               </div>
               <div className="collection-info">
                 <h3>{item.title}</h3>
