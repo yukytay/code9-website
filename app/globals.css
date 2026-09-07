@@ -283,6 +283,10 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .bracelet-photo-rotator.count-4 img:nth-child(2) { animation-delay:calc(var(--bracelet-offset,0s) - 21s); }
 .bracelet-photo-rotator.count-4 img:nth-child(3) { animation-delay:calc(var(--bracelet-offset,0s) - 14s); }
 .bracelet-photo-rotator.count-4 img:nth-child(4) { animation-delay:calc(var(--bracelet-offset,0s) - 7s); }
+#destiny-numbers-bracelet .bracelet-photo-rotator img:nth-child(1),
+.collection-card:nth-child(3) .home-product-rotator img:nth-child(1) { filter:brightness(1.04) contrast(1.08) saturate(1.1); }
+#destiny-numbers-bracelet .bracelet-photo-rotator img:nth-child(2),
+.collection-card:nth-child(3) .home-product-rotator img:nth-child(2) { filter:brightness(1.14) contrast(1.06) saturate(1.1); }
 @keyframes bracelet-photo-two { 0%,40%{opacity:1} 50%,90%{opacity:0} 100%{opacity:1} }
 @keyframes bracelet-photo-four { 0%,15%{opacity:1} 25%,90%{opacity:0} 100%{opacity:1} }
 .watch-card { border:0; }
