@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PhotoRotator from "./photo-rotator";
 
 export const metadata: Metadata = { title: "Numerology Jewellery", description: "Explore DeCode9 Numerology-guided rings, pendants, bracelets and watches, personalized to support your individual energy profile." };
 
@@ -168,11 +169,14 @@ export default function Products() {
           <p>Personal number bracelets created to express balance, brilliance, prosperity and lasting blessings.</p>
         </div>
         <div className="ring-grid product-gallery-grid">
-          {bracelets.map((bracelet) => (
+          {bracelets.map((bracelet, index) => (
             <article className="ring-card bracelet-card" id={bracelet.id} key={bracelet.sku}>
-              <div className={`bracelet-photo-rotator count-${bracelet.images.length}`}>
-                {bracelet.images.map((image, index) => <img src={image} alt={`${bracelet.title} bracelet${bracelet.images.length > 1 ? ` view ${index + 1}` : ""}`} key={image} />)}
-              </div>
+              <PhotoRotator
+                images={bracelet.images}
+                alt={`${bracelet.title} bracelet`}
+                className={`bracelet-photo-rotator count-${bracelet.images.length}`}
+                initialDelayMs={index * 1800}
+              />
               <div className="ring-card-copy">
                 <div className="product-sku">SKU: {bracelet.sku}</div>
                 <p className="ring-zh-title" lang="zh">{bracelet.zhTitle}</p>
@@ -190,11 +194,14 @@ export default function Products() {
           <p>Distinctive watches with meaningful numerical details, created around balance, confidence and continuous growth.</p>
         </div>
         <div className="ring-grid product-gallery-grid">
-          {watches.map((watch) => (
+          {watches.map((watch, index) => (
             <article className="ring-card watch-card" id={watch.id} key={watch.sku}>
-              <div className={`watch-photo-rotator count-${watch.images.length}`}>
-                {watch.images.map((image, index) => <img src={image} alt={`${watch.title} watch${watch.images.length > 1 ? ` view ${index + 1}` : ""}`} key={image} />)}
-              </div>
+              <PhotoRotator
+                images={watch.images}
+                alt={`${watch.title} watch`}
+                className={`watch-photo-rotator count-${watch.images.length}`}
+                initialDelayMs={index * 1800}
+              />
               <div className="ring-card-copy">
                 <div className="product-sku">SKU: {watch.sku} · Diameter: {watch.size}</div>
                 <p className="ring-zh-title" lang="zh">{watch.zhTitle}</p>

@@ -272,32 +272,20 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .product-sku { margin-bottom:12px;color:var(--jade);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase; }
 .bracelet-card { border:0; }
 .bracelet-photo-rotator { position:relative;height:540px;overflow:hidden;background:transparent; }
-.bracelet-card:nth-child(1) { --bracelet-offset:0s; }
-.bracelet-card:nth-child(2) { --bracelet-offset:-2s; }
-.bracelet-card:nth-child(3) { --bracelet-offset:-4s; }
-.bracelet-card:nth-child(4) { --bracelet-offset:-6s; }
-.bracelet-photo-rotator img { position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;animation:bracelet-photo-four 28s ease-in-out var(--bracelet-offset,0s) infinite; }
-.bracelet-photo-rotator.count-1 img { opacity:1;animation:none; }
-.bracelet-photo-rotator.count-2 img { animation-name:bracelet-photo-two;animation-duration:16s; }
-.bracelet-photo-rotator.count-2 img:nth-child(2) { animation-delay:calc(var(--bracelet-offset,0s) - 8s); }
-.bracelet-photo-rotator.count-4 img:nth-child(2) { animation-delay:calc(var(--bracelet-offset,0s) - 21s); }
-.bracelet-photo-rotator.count-4 img:nth-child(3) { animation-delay:calc(var(--bracelet-offset,0s) - 14s); }
-.bracelet-photo-rotator.count-4 img:nth-child(4) { animation-delay:calc(var(--bracelet-offset,0s) - 7s); }
+.interactive-photo-rotator img { position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.25s ease;pointer-events:none; }
+.interactive-photo-rotator img.is-active { opacity:1; }
+.photo-rotator-controls { position:absolute;right:14px;bottom:14px;z-index:3;display:flex;gap:7px;opacity:.68;transition:opacity .25s ease; }
+.interactive-photo-rotator:hover .photo-rotator-controls,.photo-rotator-controls:focus-within { opacity:1; }
+.photo-rotator-controls button { width:42px;height:42px;display:grid;place-items:center;padding:0;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(37,24,42,.58);box-shadow:0 5px 16px rgba(25,10,29,.2);color:#fff;cursor:pointer;backdrop-filter:blur(8px);transition:background .2s ease,transform .2s ease; }
+.photo-rotator-controls button:hover { background:rgba(67,34,75,.8);transform:translateY(-1px); }
+.photo-rotator-controls button:focus-visible { outline:2px solid #fff;outline-offset:2px; }
+.photo-rotator-controls button span { display:block;margin-top:-3px;font:30px/1 Georgia,serif; }
 #destiny-numbers-bracelet .bracelet-photo-rotator img:nth-child(1),
 .collection-card:nth-child(3) .home-product-rotator img:nth-child(1) { filter:brightness(1.04) contrast(1.08) saturate(1.1); }
 #destiny-numbers-bracelet .bracelet-photo-rotator img:nth-child(2),
 .collection-card:nth-child(3) .home-product-rotator img:nth-child(2) { filter:brightness(1.14) contrast(1.06) saturate(1.1); }
-@keyframes bracelet-photo-two { 0%,40%{opacity:1} 50%,90%{opacity:0} 100%{opacity:1} }
-@keyframes bracelet-photo-four { 0%,15%{opacity:1} 25%,90%{opacity:0} 100%{opacity:1} }
 .watch-card { border:0; }
 .watch-photo-rotator { position:relative;height:540px;overflow:hidden;background:transparent; }
-.watch-card:nth-child(1) { --watch-offset:0s; }
-.watch-card:nth-child(2) { --watch-offset:-2.5s; }
-.watch-card:nth-child(3) { --watch-offset:-5s; }
-.watch-photo-rotator img { position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;animation:watch-photo-two 18s ease-in-out var(--watch-offset,0s) infinite; }
-.watch-photo-rotator.count-1 img { opacity:1;animation:none; }
-.watch-photo-rotator.count-2 img:nth-child(2) { animation-delay:calc(var(--watch-offset,0s) - 9s); }
-@keyframes watch-photo-two { 0%,42%{opacity:1} 50%,92%{opacity:0} 100%{opacity:1} }
 .sku-image-gallery { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:#25182a; }
 .sku-image-gallery img { display:block;width:100%;height:260px;object-fit:cover; }
 .sku-image-gallery.count-1 { grid-template-columns:1fr; }
@@ -396,8 +384,7 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
   .detail-art{min-height:360px}.ring-card-copy{padding:28px 22px}.ring-collection-enquiry{align-items:flex-start;flex-direction:column}.home-engraving-occasions{min-height:360px;padding:34px 26px}.engraving-catalogue-head{display:block}.engraving-category-grid,.engraving-steps{grid-template-columns:1fr}.engraving-category{min-height:280px;padding:30px 24px}.engraving-steps>div{min-height:210px}.contact-form{padding:35px 22px}.social-line{display:block}.social-line span{display:block;margin-top:8px}.bracelet-photo-rotator,.watch-photo-rotator{height:440px}.sku-image-gallery{grid-template-columns:1fr}.sku-image-gallery img,.sku-image-gallery.count-1 img,.sku-image-gallery.count-3 img:first-child,.sku-image-gallery.count-4 img{height:360px;grid-row:auto}
 }
 @media (prefers-reduced-motion: reduce) {
-  .bracelet-photo-rotator img,.watch-photo-rotator img { display:none;animation:none; }
-  .bracelet-photo-rotator img:first-child,.watch-photo-rotator img:first-child { display:block;opacity:1; }
+  .interactive-photo-rotator img { transition:none; }
   .home-product-rotator img { display:none;animation:none; }
   .home-product-rotator img:first-child { display:block;opacity:1; }
 }
