@@ -106,6 +106,28 @@ const pendants = [
     image: "/products/bag-of-blessings-pendant.jpeg",
     imageAlt: "Silver Bag of Blessings Pendant displayed on white satin",
   },
+  {
+    sku: "DP003",
+    id: "golden-fortune-bamboo-pendant",
+    zhTitle: "金竹呈祥",
+    title: "Golden Fortune Bamboo Pendant",
+    zh: "节节高升、步步顺遂；双节相连代表福气延续、好事成双。金色象征丰盛与成就，将福气、贵人、好运与财气汇聚于身。",
+    desc: "Inspired by the upward growth of bamboo, this golden pendant symbolizes continuous progress, resilience, rising success and abundant fortune. Its two connected bamboo sections represent double blessings and prosperity flowing from one stage to the next.",
+    blessing: "Rise with every step. May blessings continue, fortune flourish, and prosperity stay with you.",
+    image: "/products/pendants/dp003-golden-fortune-bamboo-pendant.jpeg",
+    imageAlt: "Golden Fortune Bamboo Pendant displayed on natural stone",
+  },
+  {
+    sku: "DP004",
+    id: "golden-bag-of-blessings-pendant",
+    zhTitle: "金运满袋",
+    title: "Golden Bag of Blessings Pendant",
+    zh: "金袋聚福、聚财、守住财富；数字代表每个人独特的幸运密码与能量。把属于自己的吉祥数字融入福袋，寓意将好运、财富与丰盛汇聚其中。",
+    desc: "A golden symbol of gathering and holding good fortune, happiness, prosperity and abundant opportunities.",
+    blessing: "Carry your fortune. Gather your blessings. Let golden abundance follow you.",
+    image: "/products/pendants/dp004-golden-bag-of-blessings-pendant.jpeg",
+    imageAlt: "Golden Bag of Blessings Pendant displayed with flowers and gold accents",
+  },
 ];
 
 const whatsappUrl = "https://wa.me/6588651341?text=Hello%20DeCode9%2C%20I%27d%20like%20to%20enquire%20about%20your%20personalization%20services.";
