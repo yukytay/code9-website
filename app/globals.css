@@ -278,6 +278,8 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .couple-ring-card { background:linear-gradient(150deg,#fffdfb,#f9f0f3); }
 .couple-ring-image { aspect-ratio:1/1.2;background:#f3e3db; }
 .couple-ring-image img { object-position:center; }
+.couple-ring-card:is(#forever-as-one-couple-ring,#radiance-in-harmony-couple-ring) .couple-ring-image img { object-fit:contain; }
+.couple-ring-card:is(#forever-as-one-couple-ring,#radiance-in-harmony-couple-ring):hover .couple-ring-image img { transform:none; }
 .couple-ring-copy { padding:34px; }
 .product-catalogue-section { background:linear-gradient(145deg,#fbf8f6,#f0e9ee); }
 .product-gallery-grid { align-items:start; }
