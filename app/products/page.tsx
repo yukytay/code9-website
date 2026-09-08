@@ -125,7 +125,7 @@ const pendants = [
     zh: "聚福、聚财、守住财富；数字代表每个人独特的幸运密码与能量。把属于自己的吉祥数字融入福袋，寓意将好运、财富与福气汇聚其中。",
     desc: "A symbol of gathering and holding good fortune, happiness and prosperity.",
     blessing: "Carry your fortune. Gather your blessings. Let abundance follow you.",
-    image: "/products/pendants/dp004-golden-bag-of-blessings-pendant.jpeg",
+    image: "/products/pendants/dp004-golden-bag-of-blessings-pendant.png",
     imageAlt: "Golden Bag of Blessings Pendant displayed with flowers and gold accents",
   },
 ];
