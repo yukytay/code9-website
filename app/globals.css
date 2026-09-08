@@ -271,15 +271,14 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .couple-ring-series-head { max-width:850px;margin:0 auto 46px;text-align:center; }
 .couple-ring-series-head .section-label { margin-bottom:20px; }
 .couple-ring-series-head h2 { margin:10px 0 20px;color:var(--purple);font-size:clamp(44px,4.6vw,72px); }
-.couple-ring-series-head>p:last-child { margin:0;color:#756d74;font:19px/1.6 Georgia,serif; }
+.couple-ring-series-head .couple-collection-description { max-width:760px;margin:14px auto;color:#756d74;font:17px/1.7 Georgia,serif; }
+.couple-ring-series-head blockquote { max-width:720px;margin:28px auto 0;padding-top:24px;border-top:1px solid rgba(80,40,86,.18);color:var(--purple);font:italic 19px/1.55 Georgia,serif; }
 .couple-collection-zh { margin:0;color:var(--jade);font:27px/1.35 Georgia,serif;letter-spacing:.12em; }
 .couple-ring-grid { gap:32px; }
 .couple-ring-card { background:linear-gradient(150deg,#fffdfb,#f9f0f3); }
 .couple-ring-image { aspect-ratio:1/1.2;background:#f3e3db; }
 .couple-ring-image img { object-position:center; }
 .couple-ring-copy { padding:34px; }
-.couple-series-name { margin:4px 0!important;color:var(--jade)!important;font:600 13px/1.45 Arial,sans-serif!important;letter-spacing:.06em;text-transform:uppercase; }
-.couple-series-name[lang="zh"] { margin-top:0!important;font-family:Georgia,serif!important;letter-spacing:.08em;text-transform:none; }
 .product-catalogue-section { background:linear-gradient(145deg,#fbf8f6,#f0e9ee); }
 .product-gallery-grid { align-items:start; }
 .product-sku { margin-bottom:12px;color:var(--jade);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase; }

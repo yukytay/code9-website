@@ -161,7 +161,9 @@ export default function Products() {
             <div className="section-label">Couple Ring Series</div>
             <p className="couple-collection-zh" lang="zh">{coupleRingCollection.zhTitle}</p>
             <h2>{coupleRingCollection.title}</h2>
-            <p>Two individual energies, thoughtfully paired in lasting harmony.</p>
+            <p className="zh-copy couple-collection-description" lang="zh">{coupleRingCollection.zh}</p>
+            <p className="couple-collection-description">{coupleRingCollection.desc}</p>
+            <blockquote>“{coupleRingCollection.symbolism}”</blockquote>
           </div>
           <div className="ring-grid couple-ring-grid">
             {coupleRings.map((ring, index) => (
@@ -179,11 +181,6 @@ export default function Products() {
                   <div className="product-sku">SKU: {ring.sku}</div>
                   <p className="ring-zh-title" lang="zh">{ring.zhTitle}</p>
                   <h3>{ring.title}</h3>
-                  <p className="couple-series-name" lang="zh">{coupleRingCollection.zhTitle}</p>
-                  <p className="couple-series-name">{coupleRingCollection.title}</p>
-                  <p className="zh-copy" lang="zh">{coupleRingCollection.zh}</p>
-                  <p>{coupleRingCollection.desc}</p>
-                  <blockquote>“{coupleRingCollection.symbolism}”</blockquote>
                 </div>
               </article>
             ))}
