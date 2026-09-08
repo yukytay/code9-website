@@ -76,10 +76,11 @@ const coupleRingCollection = {
 const coupleRings = [
   { sku:"DCR001", id:"starlight-promise-couple-ring", zhTitle:"星辰之约", title:"Starlight Promise", image:"/products/couple-rings/DCR001-Starlight-Promise.jpeg" },
   { sku:"DCR002", id:"soul-in-harmony-couple-ring", zhTitle:"同心相伴", title:"Soul in Harmony", image:"/products/couple-rings/DCR002-Soul-in-Harmony.jpeg" },
-  { sku:"DCR003", id:"radiant-togetherness-couple-ring", zhTitle:"金缘相守", title:"Radiant Togetherness", image:"/products/couple-rings/DCR003-Radiant-Togetherness.jpeg" },
-  { sku:"DCR004", id:"eternal-promise-couple-ring", zhTitle:"永恒之约", title:"Eternal Promise", image:"/products/couple-rings/DCR004-Eternal-Promise.jpeg" },
+  { sku:"DCR003", id:"forever-as-one-couple-ring", zhTitle:"一生同心", title:"Forever as One", image:"/products/couple-rings/DCR003-Forever-as-One.jpeg" },
+  { sku:"DCR004", id:"radiance-in-harmony-couple-ring", zhTitle:"曜影同心", title:"Radiance in Harmony", image:"/products/couple-rings/DCR004-Radiance-in-Harmony.jpeg" },
   { sku:"DCR005", id:"destined-together-couple-ring", zhTitle:"缘数同行", title:"Destined Together", image:"/products/couple-rings/DCR005-Destined-Together.jpeg" },
-  { sku:"DCR006", id:"always-in-sync-couple-ring", zhTitle:"同频相伴", title:"Always in Sync", image:"/products/couple-rings/DCR006-Always-in-Sync.jpeg" },
+  { sku:"DCR006", id:"radiant-togetherness-couple-ring", zhTitle:"金缘相守", title:"Radiant Togetherness", image:"/products/couple-rings/DCR006-Radiant-Togetherness.jpeg" },
+  { sku:"DCR007", id:"eternal-promise-couple-ring", zhTitle:"永恒之约", title:"Eternal Promise", image:"/products/couple-rings/DCR007-Eternal-Promise.jpeg" },
 ];
 
 const pendants = [
