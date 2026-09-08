@@ -114,7 +114,7 @@ const pendants = [
     zh: "节节高升、步步顺遂；双节相连代表福气延续、好事成双。将福气、贵人、好运汇聚于身。",
     desc: "Inspired by the upward growth of bamboo, this pendant symbolizes continuous progress, resilience and rising success. Its two connected bamboo sections represent double blessings, lasting good fortune and prosperity passed from one stage to the next.",
     blessing: "Rise with every step. May blessings continue, fortune flourish, and good luck always be with you.",
-    image: "/products/pendants/dp003-golden-fortune-bamboo-pendant.jpeg",
+    image: "/products/pendants/dp003-golden-fortune-bamboo-pendant.png",
     imageAlt: "Golden Fortune Bamboo Pendant displayed on natural stone",
   },
   {
