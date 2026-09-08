@@ -64,10 +64,6 @@ export default function Home() {
           <h1>Your story is written<br />in the <em>numbers.</em></h1>
           <p className="hero-copy">Personalized guidance, destiny-inspired accessories and meaningful gifts—crafted to honour the energy that makes you uniquely you.</p>
           <p className="zh-copy hero-zh" lang="zh">每个人都拥有独一无二的数字组合，它映照你的内在性格与外在表达，也记录着专属于你的人生节奏。</p>
-          <div className="hero-actions">
-            <Link className="button button-outline" href="/contact">Begin your journey <span>↗</span></Link>
-            <Link className="button button-primary" href="/products">Explore the collection <span>→</span></Link>
-          </div>
         </div>
         <div className="hero-art" aria-hidden="true">
           <div className="halo halo-one" />
@@ -137,6 +133,9 @@ export default function Home() {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="collection-explore">
+          <Link className="button button-primary" href="/products">Explore the collection <span>→</span></Link>
         </div>
       </section>
 

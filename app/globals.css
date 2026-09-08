@@ -116,6 +116,7 @@ nav>a.active:after { content:""; position:absolute; width:4px; height:4px; borde
 .section-head h2 { font-size:clamp(50px,5vw,76px); margin:0; }
 .section-head>p { color:rgba(255,255,255,.58); max-width:390px; }
 .collection-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+.collection-explore { display:flex;justify-content:center;margin-top:46px; }
 .collection-card { background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.1); transition:.35s; }
 .collection-card:hover { transform:translateY(-8px); background:rgba(255,255,255,.08); }
 .product-art,.detail-art { min-height:370px; position:relative; overflow:hidden; background:radial-gradient(circle,#945283 0%,#5c2869 45%,#28122f 100%); }
