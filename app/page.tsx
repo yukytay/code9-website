@@ -135,7 +135,7 @@ export default function Home() {
           ))}
         </div>
         <div className="collection-explore">
-          <Link className="button button-primary" href="/products">Explore the collection <span>→</span></Link>
+          <Link className="button button-collection" href="/products">Explore the collection <span>→</span></Link>
         </div>
       </section>
 
