@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PhotoRotator from "./photo-rotator";
 
 export const metadata: Metadata = { title: "Numerology Jewellery", description: "Explore DeCode9 Numerology-guided rings, pendants, bracelets and watches, personalized to support your individual energy profile." };
@@ -62,6 +63,23 @@ const rings = [
     image: "/products/eternal-nine-ring.jpeg",
     imageAlt: "Silver Eternal Nine Ring with gemstone details",
   },
+];
+
+const coupleRingCollection = {
+  zhTitle: "玖缘同心 · 数字情侣戒",
+  title: "Eternal Harmony Numerology Couple Rings",
+  zh: "戒指可根据两人的数字组合，分别配置各自所需的号码。设计上，让彼此的数字形成互补，寓意：补其所缺 · 合其所长 · 两心相合 · 圆满相伴。镶嵌数字不仅是个人专属符号，也象征情侣之间互相补足、互相扶持。两枚戒指成双成对，寓意：数字互补，缘分相合；甜甜蜜蜜，长长久久。",
+  desc: "Designed as a pair, each ring can be personalized with the numerology numbers its wearer needs, symbolizing two individuals who complement and strengthen one another. The numbers represent each person’s unique energy, while the matching rings symbolize two hearts in harmony—completing what the other may lack and growing stronger together.",
+  symbolism: "Complete Your Numbers · Complement Each Other · Sweet Love · Everlasting Togetherness",
+};
+
+const coupleRings = [
+  { sku:"DCR001", id:"starlight-promise-couple-ring", zhTitle:"星辰之约", title:"Starlight Promise", image:"/products/couple-rings/DCR001-Starlight-Promise.jpeg" },
+  { sku:"DCR002", id:"soul-in-harmony-couple-ring", zhTitle:"同心相伴", title:"Soul in Harmony", image:"/products/couple-rings/DCR002-Soul-in-Harmony.jpeg" },
+  { sku:"DCR003", id:"radiant-togetherness-couple-ring", zhTitle:"金缘相守", title:"Radiant Togetherness", image:"/products/couple-rings/DCR003-Radiant-Togetherness.jpeg" },
+  { sku:"DCR004", id:"eternal-promise-couple-ring", zhTitle:"永恒之约", title:"Eternal Promise", image:"/products/couple-rings/DCR004-Eternal-Promise.jpeg" },
+  { sku:"DCR005", id:"destined-together-couple-ring", zhTitle:"缘数同行", title:"Destined Together", image:"/products/couple-rings/DCR005-Destined-Together.jpeg" },
+  { sku:"DCR006", id:"always-in-sync-couple-ring", zhTitle:"同频相伴", title:"Always in Sync", image:"/products/couple-rings/DCR006-Always-in-Sync.jpeg" },
 ];
 
 const pendants = [
@@ -137,6 +155,39 @@ export default function Products() {
               </div>
             </article>
           ))}
+        </div>
+        <div className="couple-ring-series" id="couple-ring-series">
+          <div className="couple-ring-series-head">
+            <div className="section-label">Couple Ring Series</div>
+            <p className="couple-collection-zh" lang="zh">{coupleRingCollection.zhTitle}</p>
+            <h2>{coupleRingCollection.title}</h2>
+            <p>Two individual energies, thoughtfully paired in lasting harmony.</p>
+          </div>
+          <div className="ring-grid couple-ring-grid">
+            {coupleRings.map((ring, index) => (
+              <article className="ring-card couple-ring-card" id={ring.id} key={ring.sku}>
+                <div className="ring-card-image couple-ring-image">
+                  <Image
+                    src={ring.image}
+                    alt={`${ring.title} personalized numerology couple rings`}
+                    fill
+                    sizes="(max-width: 760px) 100vw, 50vw"
+                  />
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <div className="ring-card-copy couple-ring-copy">
+                  <div className="product-sku">SKU: {ring.sku}</div>
+                  <p className="ring-zh-title" lang="zh">{ring.zhTitle}</p>
+                  <h3>{ring.title}</h3>
+                  <p className="couple-series-name" lang="zh">{coupleRingCollection.zhTitle}</p>
+                  <p className="couple-series-name">{coupleRingCollection.title}</p>
+                  <p className="zh-copy" lang="zh">{coupleRingCollection.zh}</p>
+                  <p>{coupleRingCollection.desc}</p>
+                  <blockquote>“{coupleRingCollection.symbolism}”</blockquote>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
         <div className="pendant-collection-head">
           <div className="section-label">New / Blessing Pendants</div>
