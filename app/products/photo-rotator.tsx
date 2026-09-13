@@ -53,11 +53,6 @@ export default function PhotoRotator({
           aria-hidden={index !== activeIndex}
           key={src}
         >
-          <span
-            className="photo-rotator-backdrop"
-            style={{ backgroundImage: `url("${src}")` }}
-            aria-hidden="true"
-          />
           <Image
             src={src}
             alt={`${alt}${images.length > 1 ? `, view ${index + 1}` : ""}`}
