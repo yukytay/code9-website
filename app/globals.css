@@ -267,15 +267,14 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .ring-card-image img { width:100%;height:100%;object-fit:cover;transition:transform .6s ease; }
 .ring-card:hover .ring-card-image img { transform:scale(1.025); }
 .ring-card-image>span { position:absolute;top:20px;left:20px;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.9);color:var(--purple);font:11px Georgia,serif; }
-#golden-bamboo-blessing-ring .ring-card-image { aspect-ratio:2/3; }
+#golden-bamboo-blessing-ring .ring-card-image { aspect-ratio:1/1; }
 #golden-fortune-bamboo-pendant .ring-card-image,
 #golden-bag-of-blessings-pendant .ring-card-image { aspect-ratio:3/4; }
-#golden-bamboo-blessing-ring .ring-card-image img,
 #golden-fortune-bamboo-pendant .ring-card-image img,
 #golden-bag-of-blessings-pendant .ring-card-image img { object-fit:contain; }
-#golden-bamboo-blessing-ring:hover .ring-card-image img,
 #golden-fortune-bamboo-pendant:hover .ring-card-image img,
 #golden-bag-of-blessings-pendant:hover .ring-card-image img { transform:none; }
+#golden-bamboo-blessing-ring .ring-card-image img { object-position:center 50%; }
 .ring-card-copy { padding:38px; }
 .ring-zh-title { margin:0;color:var(--jade);font:25px/1.2 Georgia,serif;letter-spacing:.08em; }
 .ring-card-copy h3 { margin:10px 0 20px;color:var(--purple);font:32px/1.2 Georgia,serif; }
