@@ -16,7 +16,7 @@ export default function Contact() {
           <div className="contact-method"><span>01</span><div><b>WhatsApp</b><a href="https://wa.me/6588651341?text=Hello%20DeCode9%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noreferrer">Start a conversation →</a></div></div>
           <div className="contact-method"><span>02</span><div><b>Email</b><a href="mailto:info.decode9@gmail.com">info.decode9@gmail.com</a></div></div>
           <div className="contact-method"><span>03</span><div><b>Business hours</b><p>Monday–Saturday · 10am–7pm</p></div></div>
-          <div className="social-line">Follow our journey <span>Instagram · Facebook</span></div>
+          <div className="social-line">Follow our journey <span><a href="https://www.facebook.com/profile.php?id=61593393397785" target="_blank" rel="noreferrer">Facebook</a> · <a href="https://www.instagram.com/decodejiu/" target="_blank" rel="noreferrer">Instagram</a></span></div>
         </div>
         <div className="contact-form contact-direct">
           <span className="section-label">Direct contact</span>

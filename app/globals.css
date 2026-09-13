@@ -384,6 +384,8 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .contact-method b { font:19px Georgia,serif; }
 .contact-method a,.contact-method p { color:#756e74;font-size:13px;margin:3px 0 0; }
 .social-line { margin-top:25px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;display:flex;justify-content:space-between;color:var(--jade); }
+.social-line a { font-weight:700;text-decoration:underline;text-decoration-color:rgba(22,116,95,.3);text-underline-offset:4px; }
+.social-line a:hover { text-decoration-color:currentColor; }
 .contact-form { background:#f0ebe8;padding:50px; }
 .contact-form label { color:var(--purple); }
 .contact-form input,.contact-form select,.contact-form textarea { border-color:rgba(61,31,67,.2); }
