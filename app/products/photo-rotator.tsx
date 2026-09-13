@@ -48,15 +48,23 @@ export default function PhotoRotator({
   return (
     <div className={`${className} interactive-photo-rotator`}>
       {images.map((src, index) => (
-        <Image
-          className={index === activeIndex ? "is-active" : ""}
-          src={src}
-          alt={`${alt}${images.length > 1 ? `, view ${index + 1}` : ""}`}
+        <div
+          className={`photo-rotator-slide${index === activeIndex ? " is-active" : ""}`}
           aria-hidden={index !== activeIndex}
-          fill
-          sizes="(max-width: 760px) 100vw, 50vw"
           key={src}
-        />
+        >
+          <span
+            className="photo-rotator-backdrop"
+            style={{ backgroundImage: `url("${src}")` }}
+            aria-hidden="true"
+          />
+          <Image
+            src={src}
+            alt={`${alt}${images.length > 1 ? `, view ${index + 1}` : ""}`}
+            fill
+            sizes="(max-width: 760px) 100vw, 50vw"
+          />
+        </div>
       ))}
       {images.length > 1 ? (
         <div className="photo-rotator-controls" role="group" aria-label={`${alt} photo controls`}>

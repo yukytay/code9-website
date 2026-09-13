@@ -267,6 +267,15 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .ring-card-image img { width:100%;height:100%;object-fit:cover;transition:transform .6s ease; }
 .ring-card:hover .ring-card-image img { transform:scale(1.025); }
 .ring-card-image>span { position:absolute;top:20px;left:20px;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.9);color:var(--purple);font:11px Georgia,serif; }
+#golden-bamboo-blessing-ring .ring-card-image { aspect-ratio:2/3; }
+#golden-fortune-bamboo-pendant .ring-card-image,
+#golden-bag-of-blessings-pendant .ring-card-image { aspect-ratio:3/4; }
+#golden-bamboo-blessing-ring .ring-card-image img,
+#golden-fortune-bamboo-pendant .ring-card-image img,
+#golden-bag-of-blessings-pendant .ring-card-image img { object-fit:contain; }
+#golden-bamboo-blessing-ring:hover .ring-card-image img,
+#golden-fortune-bamboo-pendant:hover .ring-card-image img,
+#golden-bag-of-blessings-pendant:hover .ring-card-image img { transform:none; }
 .ring-card-copy { padding:38px; }
 .ring-zh-title { margin:0;color:var(--jade);font:25px/1.2 Georgia,serif;letter-spacing:.08em; }
 .ring-card-copy h3 { margin:10px 0 20px;color:var(--purple);font:32px/1.2 Georgia,serif; }
@@ -292,17 +301,19 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .product-sku { margin-bottom:12px;color:var(--jade);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase; }
 .bracelet-card { border:0; }
 .bracelet-photo-rotator { position:relative;height:540px;overflow:hidden;background:transparent; }
-.interactive-photo-rotator img { position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.25s ease;pointer-events:none; }
-.interactive-photo-rotator img.is-active { opacity:1; }
+.photo-rotator-slide { position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity 1.25s ease;pointer-events:none;background:#2a2229; }
+.photo-rotator-slide.is-active { opacity:1; }
+.photo-rotator-backdrop { position:absolute;inset:-28px;background-position:center;background-size:cover;filter:blur(24px) brightness(.72) saturate(.82);transform:scale(1.08);opacity:.52; }
+.interactive-photo-rotator img { position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;object-fit:contain;object-position:center;pointer-events:none; }
 .photo-rotator-controls { position:absolute;right:14px;bottom:14px;z-index:3;display:flex;gap:7px;opacity:.68;transition:opacity .25s ease; }
 .interactive-photo-rotator:hover .photo-rotator-controls,.photo-rotator-controls:focus-within { opacity:1; }
 .photo-rotator-controls button { width:42px;height:42px;display:grid;place-items:center;padding:0;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(37,24,42,.58);box-shadow:0 5px 16px rgba(25,10,29,.2);color:#fff;cursor:pointer;backdrop-filter:blur(8px);transition:background .2s ease,transform .2s ease; }
 .photo-rotator-controls button:hover { background:rgba(67,34,75,.8);transform:translateY(-1px); }
 .photo-rotator-controls button:focus-visible { outline:2px solid #fff;outline-offset:2px; }
 .photo-rotator-controls button span { display:block;margin-top:-3px;font:30px/1 Georgia,serif; }
-#destiny-numbers-bracelet .bracelet-photo-rotator img:nth-child(1),
+#destiny-numbers-bracelet .bracelet-photo-rotator .photo-rotator-slide:nth-child(1) img,
 .collection-card:nth-child(3) .home-product-rotator img:nth-child(1) { filter:brightness(1.04) contrast(1.08) saturate(1.1); }
-#destiny-numbers-bracelet .bracelet-photo-rotator img:nth-child(2),
+#destiny-numbers-bracelet .bracelet-photo-rotator .photo-rotator-slide:nth-child(2) img,
 .collection-card:nth-child(3) .home-product-rotator img:nth-child(2) { filter:brightness(1.14) contrast(1.06) saturate(1.1); }
 .watch-card { border:0; }
 .watch-photo-rotator { position:relative;height:540px;overflow:hidden;background:transparent; }
@@ -404,7 +415,7 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
   .detail-art{min-height:360px}.ring-card-copy{padding:28px 22px}.ring-collection-enquiry{align-items:flex-start;flex-direction:column}.home-engraving-occasions{min-height:360px;padding:34px 26px}.engraving-catalogue-head{display:block}.engraving-category-grid,.engraving-steps{grid-template-columns:1fr}.engraving-category{min-height:280px;padding:30px 24px}.engraving-steps>div{min-height:210px}.contact-form{padding:35px 22px}.social-line{display:block}.social-line span{display:block;margin-top:8px}.bracelet-photo-rotator,.watch-photo-rotator{height:440px}.sku-image-gallery{grid-template-columns:1fr}.sku-image-gallery img,.sku-image-gallery.count-1 img,.sku-image-gallery.count-3 img:first-child,.sku-image-gallery.count-4 img{height:360px;grid-row:auto}
 }
 @media (prefers-reduced-motion: reduce) {
-  .interactive-photo-rotator img { transition:none; }
+  .photo-rotator-slide { transition:none; }
   .home-product-rotator img { display:none;animation:none; }
   .home-product-rotator img:first-child { display:block;opacity:1; }
 }
