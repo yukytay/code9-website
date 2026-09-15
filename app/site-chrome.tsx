@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { ArrowUpRight } from "./arrow-up-right";
 
 const nav = [["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Jewellery", "/products"], ["Engraved Gifts", "/engraving"], ["Contact", "/contact"]];
 
@@ -27,7 +28,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         </Link>
         <nav className={open ? "open" : ""} aria-label="Main navigation">
           {nav.map(([label, href]) => <Link className={pathname === href ? "active" : ""} href={href} key={href}>{label}</Link>)}
-          <Link className="nav-cta" href="/contact">Book consultation <span>↗</span></Link>
+          <Link className="nav-cta" href="/contact">Book consultation <ArrowUpRight /></Link>
         </nav>
         <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label="Toggle navigation" aria-expanded={open}><span /><span /></button>
       </header>
@@ -41,3 +42,4 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
     </>
   );
 }
+
