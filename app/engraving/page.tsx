@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowUpRight } from "../arrow-up-right";
 
 export const metadata: Metadata = {
   title: "Personalized Engraved Gifts",
@@ -66,8 +67,9 @@ export default function Engraving() {
 
       <section className="collection-contact section">
         <div><p className="eyebrow">Personal orders and bulk enquiries</p><h2>What would you like<br /><em>to make memorable?</em></h2><p>Tell us the occasion, preferred quantity and personalization idea. We’ll help you plan the details.</p></div>
-        <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Enquire on WhatsApp <span>↗</span></a>
+        <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Enquire on WhatsApp <ArrowUpRight /></a>
       </section>
     </>
   );
 }
+
