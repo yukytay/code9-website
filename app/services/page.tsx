@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowUpRight } from "../arrow-up-right";
 
 export const metadata: Metadata = { title: "Numerology Consultation", description: "Explore your personal numerical blueprint with a private DeCode9 consultation." };
 
@@ -12,7 +13,7 @@ export default function Services() {
         <h1>Clarity for the path<br /><em>ahead.</em></h1>
         <p>A private, thoughtful consultation designed to help you better understand your natural patterns, strengths and possibilities.</p>
         <p className="zh-copy light-zh" lang="zh">透过你的出生数字，认识内在性格、外在表现与潜在优势，并理解缺失数字所提示的成长方向。</p>
-        <Link className="button button-primary" href="/contact">Book your consultation <span>↗</span></Link>
+        <Link className="button button-primary" href="/contact">Book your consultation <ArrowUpRight /></Link>
       </section>
       <section className="service-overview section">
         <div>
@@ -43,3 +44,4 @@ export default function Services() {
     </>
   );
 }
+
