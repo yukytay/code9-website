@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ArrowUpRight } from "../arrow-up-right";
 import PhotoRotator from "./photo-rotator";
 
 export const metadata: Metadata = { title: "Numerology Jewellery", description: "Explore DeCode9 Numerology-guided rings, pendants, bracelets and watches, personalized to support your individual energy profile." };
@@ -287,8 +288,9 @@ export default function Products() {
       </section>
       <section className="collection-contact section">
         <div><p className="eyebrow">Your personal creation</p><h2>Discover what your<br /><em>numbers reveal.</em></h2><p>Begin with a Numerology consultation and let us create a meaningful piece designed around your individual energy profile.</p></div>
-        <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Chat with us on WhatsApp <span>↗</span></a>
+        <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Chat with us on WhatsApp <ArrowUpRight /></a>
       </section>
     </>
   );
 }
+
