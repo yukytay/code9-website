@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { ArrowUpRight } from "./arrow-up-right";
 
 const offerings = [
   {
@@ -129,7 +130,7 @@ export default function Home() {
               <div className="collection-info">
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
-                <span className="circle-arrow">↗</span>
+                <span className="circle-arrow"><ArrowUpRight /></span>
               </div>
             </Link>
           ))}
@@ -207,8 +208,9 @@ export default function Home() {
         <p className="eyebrow">Your story. Your energy. Your Code.</p>
         <h2>Ready to decode<br /><em>your destiny?</em></h2>
         <p className="zh-copy centered-zh" lang="zh">读懂你的数字，看见真实的自己。</p>
-        <Link className="button button-primary" href="/contact">Book a consultation <span>↗</span></Link>
+        <Link className="button button-primary" href="/contact">Book a consultation <ArrowUpRight /></Link>
       </section>
     </>
   );
 }
+
