@@ -9,6 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = incoming.get("x-forwarded-host") ?? incoming.get("host") ?? "localhost:3000";
   const protocol = incoming.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
+  const publicSiteUrl = "https://www.decode9.sg";
+  const socialImageUrl = `${publicSiteUrl}/decode9-social-share.jpg`;
   const title = "DeCode9 | Decode Your Destiny";
   const description = "Personalized Numerology consultations, customized destiny bracelets, personalized watches and laser engraved gifts.";
   return {
@@ -16,8 +18,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { default: title, template: "%s | DeCode9" },
     description,
     icons: { icon: "/code9-logo.png", shortcut: "/code9-logo.png" },
-    openGraph: { title, description, type: "website", url: origin, images: [{ url: "https://code9-destiny.yukytay.chatgpt.site/og.png", width: 655, height: 495, alt: "DeCode9 — Decode Your Destiny" }] },
-    twitter: { card: "summary_large_image", title, description, images: ["https://code9-destiny.yukytay.chatgpt.site/og.png"] },
+    alternates: { canonical: publicSiteUrl },
+    openGraph: { title, description, type: "website", url: publicSiteUrl, images: [{ url: socialImageUrl, width: 1254, height: 1254, alt: "DeCode9 — Decode Your Destiny" }] },
+    twitter: { card: "summary_large_image", title, description, images: [socialImageUrl] },
   };
 }
 
