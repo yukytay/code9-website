@@ -326,7 +326,7 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .numerology-display-card { border:0; }
 .numerology-display-image { aspect-ratio:4/3;background:#eee7df; }
 .numerology-display-image img { object-position:center; }
-.numerology-display-benefits { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:28px 0; }
+.numerology-display-benefits { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:28px 0; }
 .numerology-display-benefits>div { padding:18px;background:#f2ebe6;border-top:2px solid var(--jade); }
 .numerology-display-benefits strong { display:block;margin-bottom:9px;color:var(--purple);font:18px/1.25 Georgia,serif; }
 .numerology-display-benefits span { display:block;color:#756d74;font-size:12px;line-height:1.6; }

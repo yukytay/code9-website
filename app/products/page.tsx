@@ -311,6 +311,7 @@ export default function Products() {
                 <div><strong>Kitchen or living room</strong><span>Place it here as a symbol of balance and family harmony.</span></div>
                 <div><strong>Bedroom</strong><span>Traditionally used with the intention of encouraging peace, calm and restful sleep.</span></div>
                 <div><strong>In the car or when travelling</strong><span>Carried as a symbol of protection and a wish for a safe, smooth journey.</span></div>
+                <div><strong>Workplace or business meetings</strong><span>Bring the 165 plaque as a symbol of balancing conflicting energies, with the intention of encouraging harmonious working relationships, positive opportunities and favourable outcomes.</span></div>
               </div>
               <blockquote>“Welcome more harmony into your home.”</blockquote>
             </div>
