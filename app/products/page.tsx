@@ -291,6 +291,26 @@ export default function Products() {
             </article>
           ))}
         </div>
+
+        <div className="pendant-collection-head" id="numerology-display-plaque">
+          <div className="section-label">Numerology Display Plaque</div>
+          <h2>Meaningful numbers,<br /><em>beautifully displayed.</em></h2>
+          <p>A dedicated display piece featuring a meaningful number combination, created for the home, office or personal space.</p>
+        </div>
+        <div className="ring-grid product-gallery-grid numerology-display-grid">
+          <article className="ring-card numerology-display-card" id="numerology-display-plaque-165">
+            <div className="ring-card-image numerology-display-image">
+              <img src="/products/numerology-displays/165-numerology-display-plaque.jpeg" alt="165 numerology display plaque in a black frame" />
+            </div>
+            <div className="ring-card-copy">
+              <div className="product-sku">Number combination: 165</div>
+              <p className="ring-zh-title" lang="zh">数字能量展示牌</p>
+              <h3>165 Numerology Display Plaque</h3>
+              <p className="zh-copy" lang="zh">以 1、6、5 数字组合为主视觉的精致展示牌，适合陈列于家中、办公室或个人空间。</p>
+              <p>A refined display plaque featuring the 1-6-5 number combination, designed as a meaningful decorative piece for the home, office or personal space.</p>
+            </div>
+          </article>
+        </div>
       </section>
       <section className="collection-contact section">
         <div><p className="eyebrow">Your personal creation</p><h2>Discover what your<br /><em>numbers reveal.</em></h2><p>Begin with a Numerology consultation and let us create a meaningful piece designed around your individual energy profile.</p></div>

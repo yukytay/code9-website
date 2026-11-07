@@ -322,6 +322,10 @@ footer { background:#211028;color:white;padding:70px max(6vw,24px) 25px; }
 .watch-card { border:0; }
 .watch-photo-rotator { position:relative;aspect-ratio:3/4;overflow:hidden;background:transparent; }
 #elan-36-watch .watch-photo-rotator { aspect-ratio:2/3; }
+.numerology-display-grid { grid-template-columns:minmax(0,760px);justify-content:center; }
+.numerology-display-card { border:0; }
+.numerology-display-image { aspect-ratio:4/3;background:#eee7df; }
+.numerology-display-image img { object-position:center; }
 .sku-image-gallery { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;background:#25182a; }
 .sku-image-gallery img { display:block;width:100%;height:260px;object-fit:cover; }
 .sku-image-gallery.count-1 { grid-template-columns:1fr; }
