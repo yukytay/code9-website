@@ -294,8 +294,8 @@ export default function Products() {
 
         <div className="pendant-collection-head" id="numerology-display-plaque">
           <div className="section-label">Numerology Display Plaque</div>
-          <h2>Meaningful numbers,<br /><em>beautifully displayed.</em></h2>
-          <p>A dedicated display piece featuring a meaningful number combination, created for the home, office or personal space.</p>
+          <h2>Less tension.<br /><em>More harmony.</em></h2>
+          <p>DECODE9 165 Number Balance Plaque</p>
         </div>
         <div className="ring-grid product-gallery-grid numerology-display-grid">
           <article className="ring-card numerology-display-card" id="numerology-display-plaque-165">
@@ -303,11 +303,16 @@ export default function Products() {
               <img src="/products/numerology-displays/165-numerology-display-plaque.jpeg" alt="165 numerology display plaque in a black frame" />
             </div>
             <div className="ring-card-copy">
-              <div className="product-sku">Number combination: 165</div>
-              <p className="ring-zh-title" lang="zh">数字能量展示牌</p>
-              <h3>165 Numerology Display Plaque</h3>
-              <p className="zh-copy" lang="zh">以 1、6、5 数字组合为主视觉的精致展示牌，适合陈列于家中、办公室或个人空间。</p>
-              <p>A refined display plaque featuring the 1-6-5 number combination, designed as a meaningful decorative piece for the home, office or personal space.</p>
+              <div className="product-sku">Feng Shui Practice · 165</div>
+              <h3>DECODE9 165 Number Balance Plaque</h3>
+              <p>Home is where we want to feel peaceful, comfortable and connected.</p>
+              <p>In DECODE9’s feng shui practice, 165 is used to symbolically balance conflicting water and fire energies, with the intention of encouraging a more harmonious home and calmer relationships.</p>
+              <div className="numerology-display-benefits" aria-label="Suggested placements and intentions">
+                <div><strong>Kitchen or living room</strong><span>Place it here as a symbol of balance and family harmony.</span></div>
+                <div><strong>Bedroom</strong><span>Traditionally used with the intention of encouraging peace, calm and restful sleep.</span></div>
+                <div><strong>In the car or when travelling</strong><span>Carried as a symbol of protection and a wish for a safe, smooth journey.</span></div>
+              </div>
+              <blockquote>“Welcome more harmony into your home.”</blockquote>
             </div>
           </article>
         </div>
